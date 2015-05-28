@@ -1,0 +1,15 @@
+@font-face { font-family: "SensibilityMedium"; src: url("./fonts/SensibilityMedium.woff") format("woff"); font-weight: 400; font-style: Normal; }
+@font-face { font-family: "SensibilityLight"; src: url("./fonts/SensibilityLight.woff") format("woff"); font-weight: 400; font-style: Light; }
+
+.MainUIFont {
+  font-family: "SensibilityMedium",Helvetica,Tahoma,Verdana,sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.LightUIFont {
+  font-family: "SensibilityLight",Helvetica,Tahoma,Verdana,sans-serif;
+  font-weight: lighter;
+  -webkit-font-smoothing: antialiased;
+}
+
+
