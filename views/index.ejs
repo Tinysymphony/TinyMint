@@ -41,66 +41,70 @@
                 <h2 class="MintIcon MintIconStart">Start</h2>
             </div>
             <div id="login" class="UserInput bl-content">
-						<span class="input input--kaede">
-							<input class="input__field input__field--kaede" type="text" id="username1" />
-							<label class="input__label input__label--kaede" for="username1">
-                                <span class="input__label-content input__label-content--kaede">User Name</span>
-                            </label>
-						</span>
+                <form action="/login" method="post">
+                    <span class="input input--kaede">
+                        <input class="input__field input__field--kaede" type="text" id="username1" name="username"/>
+                        <label class="input__label input__label--kaede" for="username1">
+                            <span class="input__label-content input__label-content--kaede">User Name</span>
+                        </label>
+                    </span>
 
-						<span class="input input--kaede">
-							<input class="input__field input__field--kaede" type="password" id="password1" />
-							<label class="input__label input__label--kaede" for="password1">
-                                <span class="input__label-content input__label-content--kaede">Password</span>
-                            </label>
-						</span>
+                    <span class="input input--kaede">
+                        <input class="input__field input__field--kaede" type="password" id="password1" name="password"/>
+                        <label class="input__label input__label--kaede" for="password1">
+                            <span class="input__label-content input__label-content--kaede">Password</span>
+                        </label>
+                    </span>
 
-						<span class="input input--kaede">
-							<label class="input__label input__label--kaede">
-                                <div class="SubmitInput">
-                                    <span class="input__label-content input__label-content--kaede">Log in</span>
-                                </div>
-                            </label>
-						</span>
-                <div>
-                    <a id="turnToRegister">Need an account? Sign in > </a>
-                </div>
+                    <span class="input input--kaede">
+                        <label class="input__label input__label--kaede">
+                            <div class="SubmitInput">
+                                <span class="input__label-content input__label-content--kaede">Log in</span>
+                            </div>
+                        </label>
+                    </span>
+                    <div>
+                        <a id="turnToRegister">Need an account? Sign in > </a>
+                    </div>
+                </form>
             </div>
             <div id="signin" class="UserInput bl-content">
-						<span class="input input--kaede">
-							<input class="input__field input__field--kaede" type="text" id="username2" />
-							<label class="input__label input__label--kaede" for="username2">
-                                <span class="input__label-content input__label-content--kaede">User Name</span>
-                            </label>
-						</span>
-						<span class="input input--kaede">
-							<input class="input__field input__field--kaede" type="text" id="email" />
-							<label class="input__label input__label--kaede" for="email">
-                                <span class="input__label-content input__label-content--kaede">Email</span>
-                            </label>
-						</span>
-						<span class="input input--kaede">
-							<input class="input__field input__field--kaede" type="password" id="password2" />
-							<label class="input__label input__label--kaede" for="password2">
-                                <span class="input__label-content input__label-content--kaede">Password</span>
-                            </label>
-						</span>
-						<span class="input input--kaede">
-							<input class="input__field input__field--kaede" type="password" id="password3" />
-							<label class="input__label input__label--kaede" for="password3">
-                                <span class="input__label-content input__label-content--kaede">Reinput Password</span>
-                            </label>
-						</span>
-						<span class="input input--kaede">
-							<label class="input__label input__label--kaede">
-                                <div class="SubmitInput">
-                                    <span class="input__label-content input__label-content--kaede">Submit</span>
-                                </div>
-                            </label>
-						</span>
-                <div>
-                    <a id="turnToLogin"> < Back to Log in Page</a>
-                </div>
+                <form action="register" method="post">
+                    <span class="input input--kaede">
+                        <input class="input__field input__field--kaede" type="text" id="username2" name="regname"/>
+                        <label class="input__label input__label--kaede" for="username2">
+                            <span class="input__label-content input__label-content--kaede">User Name</span>
+                        </label>
+                    </span>
+                    <span class="input input--kaede">
+                        <input class="input__field input__field--kaede" type="text" id="email" name="email"/>
+                        <label class="input__label input__label--kaede" for="email">
+                            <span class="input__label-content input__label-content--kaede">Email</span>
+                        </label>
+                    </span>
+                    <span class="input input--kaede">
+                        <input class="input__field input__field--kaede" type="password" id="password2" name="regpassword"/>
+                        <label class="input__label input__label--kaede" for="password2">
+                            <span class="input__label-content input__label-content--kaede">Password</span>
+                        </label>
+                    </span>
+                    <span class="input input--kaede">
+                        <input  class="input__field input__field--kaede" type="password" id="password3" name="reenterpassword"/>
+                        <label class="input__label input__label--kaede" for="password3">
+                            <span class="input__label-content input__label-content--kaede">Re-enter Password</span>
+                        </label>
+                    </span>
+                    <span class="input input--kaede">
+                        <label class="input__label input__label--kaede">
+                            <div class="SubmitInput">
+                                <span class="input__label-content input__label-content--kaede">Submit</span>
+                            </div>
+                        </label>
+                    </span>
+                    <div>
+                        <a id="turnToLogin"> < Back to Log in Page</a>
+                    </div>
+                </form>
             </div>
             <span class="MintIcon CloseButton"></span>
         </section>

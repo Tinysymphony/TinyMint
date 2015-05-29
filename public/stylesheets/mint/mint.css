@@ -508,7 +508,7 @@ section.bl-expand .CloseButton {
 	overflow: auto;
 	position: absolute;
 	float: left;
-	left: 100%;
+	top: -100%;
 	/*opacity: 0;*/
 	/*display: none;*/
 }
