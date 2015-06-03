@@ -4,10 +4,13 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require("express-session");
 
 
-var routes = require('./routes/index');
+var index = require('./routes/index');
 var editor = require('./routes/editor');
+
+var flash = require('connect-flash');
 
 var app = express();
 
@@ -23,14 +26,25 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+app.use(session({
+    secret: 'Wytiny-Mint-Project-2015',
+    cookie: { maxAge: 10*24*60*60*1000} //save cookie for 10 days
+}));
+app.use(flash());
+
+app.use('/', index);
 app.use('/users', editor);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+//app.use(function(req, res, next) {
+//  var err = new Error('Not Found');
+//  err.status = 404;
+//  next(err);
+//});
+app.use(function(req, res, next){
+    console.log('default');
+    res.status(404);
+    res.render('error404');
 });
 
 // error handlers
@@ -56,6 +70,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
 
 module.exports = app;

@@ -1,48 +1,74 @@
 var express = require('express');
 var User = require('../lib/user');
 var router = express.Router();
-//var redis = require('redis');
-//var bcrypt = require('bcrypt');
-//var db = redis.createClient();
-
-//db.on('error', function(err){
-//   console.log('Error ' + err);
-//});
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-    res.render('index', { title: 'TinyMint | Web Designer' });
+router.get('/', function (req, res, next) {
+    res.render('index', {
+        title: 'TinyMint | Web Designer',
+        user: req.session.user,
+    });
 });
 
-exports.submit = function (req, res, next) {
-    var data = req.body.user;
-    User.getByName(data.name, function (err, user) {
-        if(err) return next(err);
-        if(user.id) {
-            res.error("Username already exists!");
-            res.redirect('back');
-        }else{
-            user = new User({
-                name: data.name,
-                pass: data.password,
-                mail: data.mail
+
+//sign up
+router.post('/', function (req, res, next) {
+    var data = req.body;
+    if(data.login){
+        if(!data.username)
+            res.json({"info": "Please input username"});
+        else if(!data.password)
+            res.json({"info": "Please input password"});
+        else {
+            User.authenticate(data.username, data.password, function (err, getUser) {
+                if(err)
+                    res.json({"info": err});
+                if(getUser) {
+                    console.log("here");
+                    res.redirect('/');
+                } else {
+                    res.json({"info": "Invalid Credentials!"});
+                }
             });
 
-            user.save(function(err){
-                if(err) return next(err);
-                req.session.uid = user.id;
-                res.redirect('/');
-            })
         }
-    })
-}
+    }
+    else if(data.signup) {
+        console.log(data.username);
+        if(!data.username) {
+            res.json({"info": "Please create a user name"});
+        } else if(!data.email){
+            res.json({"info": "Please input email address"});
+        } else if(!data.password){
+            res.json({"info": "Please create a password"});
+        } else if(data.password!=data.repassword){
+            res.json({"info": "The passwords aren't same"});
+        } else {
+            User.getByName(data.username, function(err, user){
+                if(err){
+                    res.json({"info": err});
+                }
+                if(user.id) {
+                    res.json({"info": "The name has been used"});
+                }else{
+                    var createUser = new User({
+                        name: data.username,
+                        pass: data.password,
+                        mail: data.email
+                    });
+                    createUser.save(function(err){
+                        if(err){
+                            res.json({"info": err});
+                        }
+                        req.session.user = createUser;
+                        console.log("New user " + createUser.name + " joined");
+                        res.redirect('/users');
+                    })
+                }
+            });
+        }
+    }
 
-//router.submit('/', function(){
-//
-//});
-
-//router.get('/home', function(req, res, next) {
-//    res.render('home', { title: 'TinyMint | Create Your Web' });
-//});
+});
 
 module.exports = router;

@@ -41,9 +41,9 @@
                 <h2 class="MintIcon MintIconStart">Start</h2>
             </div>
             <div id="login" class="UserInput bl-content">
-                <form action="/login" method="post">
+                <form action="/" method="post" id="loginForm" >
                     <span class="input input--kaede">
-                        <input class="input__field input__field--kaede" type="text" id="username1" name="username"/>
+                        <input class="input__field input__field--kaede" type="text" id="username1" name="name"/>
                         <label class="input__label input__label--kaede" for="username1">
                             <span class="input__label-content input__label-content--kaede">User Name</span>
                         </label>
@@ -57,8 +57,9 @@
                     </span>
 
                     <span class="input input--kaede">
-                        <label class="input__label input__label--kaede">
-                            <div class="SubmitInput">
+                        <label class="input__label input__label--kaede" >
+                            <!--<input tabindex="-1" class="input__field input__field--kaede" type="" name="login" />-->
+                            <div class="SubmitInput" id="loginButton">
                                 <span class="input__label-content input__label-content--kaede">Log in</span>
                             </div>
                         </label>
@@ -69,34 +70,35 @@
                 </form>
             </div>
             <div id="signin" class="UserInput bl-content">
-                <form action="register" method="post">
+                <form action="/" method="post" id="signupForm">
                     <span class="input input--kaede">
-                        <input class="input__field input__field--kaede" type="text" id="username2" name="user[name]"/>
+                        <input class="input__field input__field--kaede" type="text" id="username2" name="name"/>
                         <label class="input__label input__label--kaede" for="username2">
                             <span class="input__label-content input__label-content--kaede">User Name</span>
                         </label>
                     </span>
                     <span class="input input--kaede">
-                        <input class="input__field input__field--kaede" type="text" id="email" name="user[mail]"/>
+                        <input class="input__field input__field--kaede" type="text" id="email" name="mail"/>
                         <label class="input__label input__label--kaede" for="email">
                             <span class="input__label-content input__label-content--kaede">Email</span>
                         </label>
                     </span>
                     <span class="input input--kaede">
-                        <input class="input__field input__field--kaede" type="password" id="password2" name="user[password]"/>
+                        <input class="input__field input__field--kaede" type="password" id="password2" name="password"/>
                         <label class="input__label input__label--kaede" for="password2">
                             <span class="input__label-content input__label-content--kaede">Password</span>
                         </label>
                     </span>
                     <span class="input input--kaede">
-                        <input  class="input__field input__field--kaede" type="password" id="password3" name="user[repassword]"/>
+                        <input  class="input__field input__field--kaede" type="password" id="password3" name="repassword"/>
                         <label class="input__label input__label--kaede" for="password3">
                             <span class="input__label-content input__label-content--kaede">Re-enter Password</span>
                         </label>
                     </span>
                     <span class="input input--kaede">
                         <label class="input__label input__label--kaede">
-                            <div class="SubmitInput" type="submit">
+                            <!--<input  class="input__field input__field--kaede" type="submit" name="signup"/>-->
+                            <div class="SubmitInput" type="submit" id="signupButton">
                                 <span class="input__label-content input__label-content--kaede">Submit</span>
                             </div>
                         </label>
