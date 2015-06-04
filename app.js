@@ -9,6 +9,7 @@ var session = require("express-session");
 
 var index = require('./routes/index');
 var editor = require('./routes/editor');
+var dashboard = require('./routes/dashboard');
 
 var flash = require('connect-flash');
 
@@ -27,6 +28,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
+    resave: false,
+    saveUninitialized: true,
     secret: 'Wytiny-Mint-Project-2015',
     cookie: { maxAge: 10*24*60*60*1000} //save cookie for 10 days
 }));
@@ -34,13 +37,8 @@ app.use(flash());
 
 app.use('/', index);
 app.use('/users', editor);
+app.use('/dashboard', dashboard);
 
-// catch 404 and forward to error handler
-//app.use(function(req, res, next) {
-//  var err = new Error('Not Found');
-//  err.status = 404;
-//  next(err);
-//});
 app.use(function(req, res, next){
     console.log('default');
     res.status(404);
@@ -70,5 +68,6 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
 
 module.exports = app;

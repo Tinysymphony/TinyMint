@@ -22,6 +22,7 @@ $(document).ready(function(){
             data: loginfo,
             type: "POST",
             url: "/",
+            async: false,
             dataType: 'text',
             cache: false,
             timeout: 5000,
@@ -30,6 +31,9 @@ $(document).ready(function(){
                 $("#tmpE").remove();
                 if(getData.info) {
                     $("#loginForm").before("<div id='tmpE'>" + getData.info + "</div>");
+                    if(getData.link) {
+                        window.location=getData.link;
+                    }
                 }
             },
             error: function(jqXHR, textStatus, errorThrown){
@@ -60,6 +64,9 @@ $(document).ready(function(){
                 $("#tmpE").remove();
                 if(getData.info) {
                     $("#signupForm").before("<div id='tmpE'>" + getData.info + "</div>");
+                    if(getData.link) {
+                        window.location = getData.link;
+                    }
                 }
             },
             error: function(jqXHR, textStatus, errorThrown){

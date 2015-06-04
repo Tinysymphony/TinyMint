@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
-
 router.get('/', checkLogin);
-router.get('/', function (req, res, next) {
-    res.render('home', {title: 'TinyMint | Web Designer'});
+router.get('/', function(req, res, next){
+    res.render('dashboard', {
+        title: "TinyMint | " + req.session.user.name + " Dashboard"
+    });
 });
 
 function checkLogin(req, res, next) {
