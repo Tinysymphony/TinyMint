@@ -7,16 +7,18 @@
     <title><%= title %></title>
     <style type="text/css">
     </style>
-    <link rel="shortcut icon" href="./images/ico/mint.ico">
-    <link rel="stylesheet" type="text/css" href="./stylesheets/dashboard/dash.css" />
-    <link rel="stylesheet" type="text/css" href="./stylesheets/mint/mint.css" />
-    <link rel="stylesheet" type="text/css" href="./stylesheets/mint/title.css" />
+    <link rel="shortcut icon" href="/images/ico/mint.ico">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/dashboard/dash.css" />
+    <!--<link rel="stylesheet" type="text/css" href="/stylesheets/foundation.css" />-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/mint/mint.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/mint/title.css" />
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
-    <script type="text/javascript" src="./javascripts/modernizr.custom.js"></script>
-    <script type="text/javascript" src="./javascripts/dashboard/dash.js"></script>
+    <script type="text/javascript" src="/javascripts/modernizr.custom.js"></script>
+    <script type="text/javascript" src="/javascripts/dashboard/dash.js"></script>
 </head>
 <body>
-<div class="container">
+<div class="WebContainer">
     <div id="titleLine">
         <div id="head">
             <a class="link link--yaku title" href="#">
@@ -26,7 +28,7 @@
     </div>
     <div id="mainBoard">
         <div id="userMenu">
-            <p>Pic </p>
+            <img id="userPic" class="img-circle" alt="Generic placeholder image"  />
             <div id="userTinyBar"></div>
             <div id="menuList">
                 <div class="ListItem SelectedItem" id="mints">Mints</div>
@@ -34,7 +36,31 @@
                 <div class="ListItem" id="logout">Logout</div>
             </div>
         </div>
-        <div id="userBoard"></div>
+        <div id="userBoard">
+            <div class="jumbotron">
+                <div class="container">
+                    <h1 id="DBTitle">Account Info</h1>
+                    <p>Tell me more about you and your privacy is being protected by TintMint :) </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4"><h2>Tiny</h2></div>
+                <div class="col-lg-4"><h2>Tiny</h2></div>
+                <div class="col-lg-4"><h2>Tiny</h2></div>
+                <div class="col-lg-4"><h2>Tiny</h2></div>
+                <div class="col-lg-4"><h2>Tiny</h2></div>
+                <div class="col-lg-4"><h2>Tiny</h2></div>
+                <div class="col-lg-4"><h2>Tiny</h2></div>
+                <div class="col-lg-4"><h2>Tiny</h2></div>
+                <div class="col-lg-4"><h2>Tiny</h2></div>
+            </div>
+            <hr class="featurette-divider" />
+            <div class="row">
+                <div class="col-lg-4"><h2>Tiny</h2></div>
+                <div class="col-lg-4"><h2>Tiny</h2></div>
+                <div class="col-lg-4"><h2>Tiny</h2></div>
+            </div>
+        </div>
     </div>
 </div>
 </body>

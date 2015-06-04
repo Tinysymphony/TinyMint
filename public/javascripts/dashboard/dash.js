@@ -1,4 +1,7 @@
 $(document).ready(function() {
+
+    reSizeMenuItem();
+
     $(".ListItem").click(function(){
         $(".ListItem").removeClass("SelectedItem");
         $(this).addClass("SelectedItem");
@@ -25,4 +28,17 @@ $(document).ready(function() {
             }
         });
     });
+
 });
+
+$(window).resize(function(){
+    reSizeMenuItem();
+});
+
+function reSizeMenuItem(){
+    if($("#userMenu").width()<150){
+        $(".ListItem").css("font-size", "1em");
+    }else {
+        $(".ListItem").css("font-size", "1.8em");
+    }
+}
