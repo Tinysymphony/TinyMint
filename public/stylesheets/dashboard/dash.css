@@ -3,3 +3,59 @@
     width: 100%;
     background-color: #fff;
 }
+
+#userMenu {
+    float: left;
+    height: 100%;
+    width: 12%;
+    min-width: 170px;
+    background-color: #00C5CD;
+    text-align: right;
+}
+
+#userTinyBar {
+    margin-left: 5%;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    height: 1px;
+    width: 90%;
+    background-color: #fff;
+}
+
+p {
+    top: 0;
+    botto: 0;
+    height: auto;
+    font-size: 2em;
+    color: #fff;
+}
+
+#userBoard {
+    height: 100%;
+    width: 85%;
+}
+
+#menuLIst {
+    position: relative;
+    margin-top: 10px;
+}
+
+.ListItem {
+    height: 60px;
+    line-height: 60px;
+    max-height: 60px;
+    width: 100%;
+    font-size: 1.8em;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color .5s;
+    overflow: hidden;
+}
+
+:not(.SelectedItem).ListItem:hover {
+    background-color: #87CEEB;
+}
+
+.SelectedItem {
+    background-color: #FF6A6A;
+}

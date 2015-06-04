@@ -24,12 +24,6 @@ $(document).ready(function(){
 	});
 
 	$("#fun1").click(function(){
-		// console.log($("#seg5").offset().top);
-		// console.log($("#seg6").offset().top);
-		// console.log($("#seg7").offset().top);
-		// console.log($("#seg9").offset().top);
-		// console.log($("#seg10").offset().top);
-		// console.log($("#seg11").offset().top);
 		$("#editorBoard").animate({scrollTop:"+=100"}, 500);
 	});
 
@@ -38,15 +32,6 @@ $(document).ready(function(){
 		$("#editorBoard").animate({scrollTop:$("#seg1").offset().top},500);
 	});
 
-	// $("#editorBoard").mousewheel(function(event) {
-	//     console.log(event.deltaX, event.deltaY, event.deltaFactor);
-	// 	if(event.deltaY < 0){
-	// 		$("#SegmentHolder").animate({top:'-=20%'}, 50);
-	// 	}
-	// 	else{
-	// 		$("#SegmentHolder").animate({top:'+=20%'}, 50);
-	// 	}
-	// });
 
 	$("#appendNew").mouseover(function(){
 		$(this).animate({opacity:'0.7'},"fast");
