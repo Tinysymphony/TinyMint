@@ -2,10 +2,13 @@ $(document).ready(function() {
 
     reSizeMenuItem();
 
-    $(".ListItem").click(function(){
+    if(window.location.pathname=="/dashboard/infos"){
         $(".ListItem").removeClass("SelectedItem");
-        $(this).addClass("SelectedItem");
-    });
+        $("#accountInfo").addClass("SelectedItem");
+    }else {
+        $(".ListItem").removeClass("SelectedItem");
+        $("#mints").addClass("SelectedItem");
+    }
 
     $("#logout").click(function(){
         var sendSignal = {exitSignal:true};
@@ -27,6 +30,14 @@ $(document).ready(function() {
                 alert(info);
             }
         });
+    });
+
+    $("#mints").click(function(){
+        window.location = '/dashboard/mints';
+    });
+
+    $("#accountInfo").click(function(){
+        window.location = '/dashboard/infos';
     });
 
 });

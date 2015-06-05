@@ -5,7 +5,24 @@ var router = express.Router();
 router.get('/', function(req, res, next){
     res.render('dashboard', {
         //title: "TinyMint | " + req.session.user.name + " Dashboard"
-        title: "TinyMint | " + " Dashboard"
+        title: "TinyMint | " + " Dashboard",
+        divIndex: 0
+    });
+});
+
+router.get('/mints', function(req, res, next){
+    res.render('dashboard', {
+        //title: "TinyMint | " + req.session.user.name + " Dashboard"
+        title: "TinyMint | " + " Dashboard",
+        divIndex: 0
+    });
+});
+
+router.get('/infos', function(req, res, next){
+    res.render('dashboard', {
+        //title: "TinyMint | " + req.session.user.name + " Dashboard"
+        title: "TinyMint | " + " Dashboard",
+        divIndex: 1
     });
 });
 

@@ -33,12 +33,17 @@
             <div id="userName">WyTiny</div>
             <div id="userTinyBar"></div>
             <div id="menuList">
-                <div class="ListItem SelectedItem" id="mints">Mints</div>
+                <div class="ListItem" id="mints">Mints</div>
                 <div class="ListItem" id="accountInfo">Account Info</div>
                 <div class="ListItem" id="logout">Logout</div>
             </div>
         </div>
-        <div id="userBoard">
+        <% if(divIndex==0) {%>
+        <div id="userMintBoard">
+
+        </div>
+        <%} else if(divIndex==1) {%>
+        <div id="userInfoBoard">
             <div class="userTitle jumbotron">
                 <div class="container">
                     <h1 class="DBTitle">Account Info</h1>
@@ -97,17 +102,68 @@
             </div>
             <hr class="featurette-divider" />
             <div class="row tinyrow">
-                <div class="col-lg-4"><h2>Tiny</h2></div>
-                <div class="col-lg-4"><h2>Tiny</h2></div>
-                <div class="col-lg-4"><h2>Tiny</h2></div>
+                <div class="InputItem  col-lg-3">
+                    <span class="input input--yoshiko">
+                        <input class="input__field input__field--yoshiko" type="text" id="input-10" />
+                        <label class="input__label input__label--yoshiko" for="input-10">
+                            <span class="input__label-content input__label-content--yoshiko" data-content="Bird's Color">Interest Tags</span>
+                        </label>
+				    </span>
+                </div>
+                <div class="InputItem  col-lg-3">
+                    <span class="input input--yoshiko">
+                        <input class="input__field input__field--yoshiko" type="submit" id="input-10" />
+                        <label class="input__label input__label--yoshiko" for="input-10">
+                            <span class="input__label-content input__label-content--yoshiko" ></span>
+                        </label>
+				    </span>
+                </div>
             </div>
+            <hr class="featurette-divider" />
             <div class="userTitle jumbotron">
                 <div class="container">
                     <h2 class="DBTitle">Security & Authentication</h2>
                     <p>Change your password | Add relation with accounts on other platforms | Bond info with identification </p>
                 </div>
             </div>
+            <div class="row tinyrow">
+                <div class="InputItem col-lg-3">
+                    <span class="input input--yoshiko">
+                        <input class="input__field input__field--yoshiko" type="text" id="input-10" />
+                        <label class="input__label input__label--yoshiko" for="input-10">
+                            <span class="input__label-content input__label-content--yoshiko" data-content="Bird's Color">Old Password</span>
+                        </label>
+				    </span>
+                </div>
+                <div class="InputItem col-lg-3">
+                    <span class="input input--yoshiko">
+                        <input class="input__field input__field--yoshiko" type="text" id="input-10" />
+                        <label class="input__label input__label--yoshiko" for="input-10">
+                            <span class="input__label-content input__label-content--yoshiko" data-content="Bird's Color">New Password</span>
+                        </label>
+				    </span>
+                </div>
+                <div class="InputItem col-lg-3">
+                    <span class="input input--yoshiko">
+                        <input class="input__field input__field--yoshiko" type="text" id="input-10" />
+                        <label class="input__label input__label--yoshiko" for="input-10">
+                            <span class="input__label-content input__label-content--yoshiko" data-content="Bird's Color">Re-enter New Password</span>
+                        </label>
+				    </span>
+                </div>
+                <div class="InputItem col-lg-3">
+                    <span class="input input--yoshiko">
+                        <input class="input__field input__field--yoshiko" type="submit" id="input-10" />
+                        <label class="input__label input__label--yoshiko" for="input-10">
+                            <span class="input__label-content input__label-content--yoshiko" ></span>
+                        </label>
+				    </span>
+                </div>
+                <hr class="featurette-divider" />
+                <div id="blank" class="row tinyrow"></div>
+            </div>
         </div>
+        <%} %>
     </div>
 </div>
 <script src="/javascripts/classie.js"></script>
