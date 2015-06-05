@@ -6,11 +6,16 @@
     margin-top: 50px;
 }
 
+.product__image {
+    max-width: 100px!important;
+}
+
 #userName {
     margin-top: 25px;
     width: 100%;
     font-size: 2em;
     text-align: center;
+    color: #fff!important;
 }
 
 .tinyrow {
@@ -39,11 +44,14 @@
 }
 
 #userMenu {
+    position: relative;
     float: left;
     height: 100%;
     width: 12%;
     background-color: #00C5CD;
     text-align: center;
+    box-shadow: 2px 2px 5px 2px #999;
+    z-index: 1000;
 }
 
 #userTinyBar {
@@ -72,6 +80,7 @@ p {
     width: 100%;
 }
 
+
 .ListItem {
     height: 60px;
     line-height: 60px;
@@ -82,6 +91,7 @@ p {
     text-align: center;
     transition: background-color .5s;
     overflow: hidden;
+    color: #fff !important;
 }
 
 :not(.SelectedItem).ListItem:hover {
@@ -92,19 +102,23 @@ p {
     background-color: #FF6A6A;
 }
 
-#userMintBoard {
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-}
-
-#userInfoBoard {
+.Board {
+    position: relative;
     padding: 0;
     float: left;
     height: 100%;
     width: 88%;
     overflow: auto;
-    /*transition: .5s;*/
+    z-index: 10;
+    transition: .5s;
+}
+
+#userMintBoard {
+    display: block;
+}
+
+#userInfoBoard {
+    display: none;
 }
 
 .TitleBoard {

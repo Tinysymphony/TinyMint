@@ -9,11 +9,12 @@
     </style>
     <link rel="shortcut icon" href="/images/ico/mint.ico">
     <link rel="stylesheet" type="text/css" href="/stylesheets/dashboard/dash.css" />
-    <!--<link rel="stylesheet" type="text/css" href="/stylesheets/foundation.css" />-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/mint/mint.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/mint/title.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/inputB.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/dashboard/demo.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/dashboard/component.css" />
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
     <script type="text/javascript" src="/javascripts/modernizr.custom.js"></script>
     <script type="text/javascript" src="/javascripts/dashboard/dash.js"></script>
@@ -29,21 +30,60 @@
     </div>
     <div id="mainBoard">
         <div id="userMenu">
-            <img id="userPic" class="img-circle" src="http://avos-bucket.catchkaka.com/1774699440894782headimg552628kq.jpeg@100w_100h.jpg" alt="Generic placeholder image"  />
+            <img id="userPic" class="img-circle" src="http://avos-bucket.catchkaka.com/1774699440894782headimg552628kq.jpeg@100w_100h.jpg" alt="TinyPic"  />
             <div id="userName">WyTiny</div>
             <div id="userTinyBar"></div>
             <div id="menuList">
-                <div class="ListItem" id="mints">Mints</div>
+                <div class="ListItem SelectedItem" id="mints">Mints</div>
                 <div class="ListItem" id="accountInfo">Account Info</div>
                 <div class="ListItem" id="logout">Logout</div>
             </div>
         </div>
-        <% if(divIndex==0) {%>
-        <div id="userMintBoard">
-
+        <div id="userMintBoard" class="Board">
+            <div class="userTitle jumbotron">
+                <div class="container">
+                    <h1 class="DBTitle">Your Mints</h1>
+                    <p>Mint : That's what we'd like to call a work designed through TinyMint as.</p>
+                    <p>Three templates are provided for you, have fun~</p>
+                </div>
+            </div>
+            <div class="row tinyrow">
+                <section class="grid">
+                    <div class="product">
+                        <div class="product__info">
+                            <img class="product__image" src="/images/mints-pic/camera.png" alt="TinyMint" />
+                            <h3 class="product__title">Chryseia</h3>
+                            <button class="action action--button action--buy"><span class="action__text">Edit</span></button>
+                            <button class="action action--button action--buy"><span class="action__text">Download</span></button>
+                            <button class="action action--button action--buy"><span class="action__text">Share</span></button>
+                        </div>
+                        <label class="action action--compare-add"><input class="check-hidden" type="checkbox" /><i class="fa fa-plus"></i><i class="fa fa-check"></i><span class="action__text action__text--invisible">Delete</span></label>
+                    </div>
+                    <div class="product">
+                        <div class="product__info">
+                            <img class="product__image" src="/images/mints-pic/news.png" alt="TinyMint" />
+                            <h3 class="product__title">Chryseia</h3>
+                            <button class="action action--button action--buy"><span class="action__text">Edit</span></button>
+                            <button class="action action--button action--buy"><span class="action__text">Download</span></button>
+                            <button class="action action--button action--buy"><span class="action__text">Share</span></button>
+                        </div>
+                        <label class="action action--compare-add"><input class="check-hidden" type="checkbox" /><i class="fa fa-plus"></i><i class="fa fa-check"></i><span class="action__text action__text--invisible">Delete</span></label>
+                    </div>
+                    <div class="product">
+                        <div class="product__info">
+                            <img class="product__image" src="/images/mints-pic/air.png" alt="TinyMint" />
+                            <h3 class="product__title">Chryseia</h3>
+                            <button class="action action--button action--buy"><span class="action__text">Edit</span></button>
+                            <button class="action action--button action--buy"><span class="action__text">Download</span></button>
+                            <button class="action action--button action--buy"><span class="action__text">Share</span></button>
+                        </div>
+                        <label class="action action--compare-add"><input class="check-hidden" type="checkbox" /><i class="fa fa-plus"></i><i class="fa fa-check"></i><span class="action__text action__text--invisible">Delete</span></label>
+                    </div>
+                </section>
+            </div>
+            <hr class="featurette-divider" />
         </div>
-        <%} else if(divIndex==1) {%>
-        <div id="userInfoBoard">
+        <div id="userInfoBoard" class="Board">
             <div class="userTitle jumbotron">
                 <div class="container">
                     <h1 class="DBTitle">Account Info</h1>
@@ -55,7 +95,7 @@
                     <span class="input input--yoshiko">
                         <input class="input__field input__field--yoshiko" type="text" id="input-10" />
                         <label class="input__label input__label--yoshiko" for="input-10">
-                            <span class="input__label-content input__label-content--yoshiko" data-content="Bird's Color">Nickname</span>
+                            <span class="input__label-content input__label-content--yoshiko" data-content="Nickname">Nickname</span>
                         </label>
 				    </span>
                 </div>
@@ -63,7 +103,7 @@
                     <span class="input input--yoshiko">
                         <input class="input__field input__field--yoshiko" type="text" id="input-10" />
                         <label class="input__label input__label--yoshiko" for="input-10">
-                            <span class="input__label-content input__label-content--yoshiko" data-content="Bird's Color">Mobile Phone</span>
+                            <span class="input__label-content input__label-content--yoshiko" data-content="Mobile Phone">Mobile Phone</span>
                         </label>
 				    </span>
                 </div>
@@ -71,7 +111,7 @@
                     <span class="input input--yoshiko">
                         <input class="input__field input__field--yoshiko" type="text" id="input-10" />
                         <label class="input__label input__label--yoshiko" for="input-10">
-                            <span class="input__label-content input__label-content--yoshiko" data-content="Bird's Color">Email</span>
+                            <span class="input__label-content input__label-content--yoshiko" data-content="Email">Email</span>
                         </label>
 				    </span>
                 </div>
@@ -79,7 +119,7 @@
                     <span class="input input--yoshiko">
                         <input class="input__field input__field--yoshiko" type="text" id="input-10" />
                         <label class="input__label input__label--yoshiko" for="input-10">
-                            <span class="input__label-content input__label-content--yoshiko" data-content="Bird's Color">Blog</span>
+                            <span class="input__label-content input__label-content--yoshiko" data-content="Blog">Blog</span>
                         </label>
 				    </span>
                 </div>
@@ -87,7 +127,7 @@
                     <span class="input input--yoshiko">
                         <input class="input__field input__field--yoshiko" type="text" id="input-10" />
                         <label class="input__label input__label--yoshiko" for="input-10">
-                            <span class="input__label-content input__label-content--yoshiko" data-content="Bird's Color">Gender</span>
+                            <span class="input__label-content input__label-content--yoshiko" data-content="Gender">Gender</span>
                         </label>
 				    </span>
                 </div>
@@ -95,7 +135,7 @@
                     <span class="input input--yoshiko">
                         <input class="input__field input__field--yoshiko" type="text" id="input-10" />
                         <label class="input__label input__label--yoshiko" for="input-10">
-                            <span class="input__label-content input__label-content--yoshiko" data-content="Bird's Color">Age</span>
+                            <span class="input__label-content input__label-content--yoshiko" data-content="Age">Age</span>
                         </label>
 				    </span>
                 </div>
@@ -106,13 +146,13 @@
                     <span class="input input--yoshiko">
                         <input class="input__field input__field--yoshiko" type="text" id="input-10" />
                         <label class="input__label input__label--yoshiko" for="input-10">
-                            <span class="input__label-content input__label-content--yoshiko" data-content="Bird's Color">Interest Tags</span>
+                            <span class="input__label-content input__label-content--yoshiko" data-content="Interest Tags">Interest Tags</span>
                         </label>
 				    </span>
                 </div>
                 <div class="InputItem  col-lg-3">
                     <span class="input input--yoshiko">
-                        <input class="input__field input__field--yoshiko" type="submit" id="input-10" />
+                        <input class="input__field input__field--yoshiko" type="submit" id="submitInfo" />
                         <label class="input__label input__label--yoshiko" for="input-10">
                             <span class="input__label-content input__label-content--yoshiko" ></span>
                         </label>
@@ -131,7 +171,7 @@
                     <span class="input input--yoshiko">
                         <input class="input__field input__field--yoshiko" type="text" id="input-10" />
                         <label class="input__label input__label--yoshiko" for="input-10">
-                            <span class="input__label-content input__label-content--yoshiko" data-content="Bird's Color">Old Password</span>
+                            <span class="input__label-content input__label-content--yoshiko" data-content="Old Password">Old Password</span>
                         </label>
 				    </span>
                 </div>
@@ -139,7 +179,7 @@
                     <span class="input input--yoshiko">
                         <input class="input__field input__field--yoshiko" type="text" id="input-10" />
                         <label class="input__label input__label--yoshiko" for="input-10">
-                            <span class="input__label-content input__label-content--yoshiko" data-content="Bird's Color">New Password</span>
+                            <span class="input__label-content input__label-content--yoshiko" data-content="New Password">New Password</span>
                         </label>
 				    </span>
                 </div>
@@ -147,13 +187,13 @@
                     <span class="input input--yoshiko">
                         <input class="input__field input__field--yoshiko" type="text" id="input-10" />
                         <label class="input__label input__label--yoshiko" for="input-10">
-                            <span class="input__label-content input__label-content--yoshiko" data-content="Bird's Color">Re-enter New Password</span>
+                            <span class="input__label-content input__label-content--yoshiko" data-content="Re-enter Password">Re-enter Password</span>
                         </label>
 				    </span>
                 </div>
                 <div class="InputItem col-lg-3">
                     <span class="input input--yoshiko">
-                        <input class="input__field input__field--yoshiko" type="submit" id="input-10" />
+                        <input class="input__field input__field--yoshiko" type="submit" id="submitPassword" />
                         <label class="input__label input__label--yoshiko" for="input-10">
                             <span class="input__label-content input__label-content--yoshiko" ></span>
                         </label>
@@ -163,7 +203,6 @@
                 <div id="blank" class="row tinyrow"></div>
             </div>
         </div>
-        <%} %>
     </div>
 </div>
 <script src="/javascripts/classie.js"></script>

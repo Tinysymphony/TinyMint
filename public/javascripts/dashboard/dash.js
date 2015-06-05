@@ -2,14 +2,6 @@ $(document).ready(function() {
 
     reSizeMenuItem();
 
-    if(window.location.pathname=="/dashboard/infos"){
-        $(".ListItem").removeClass("SelectedItem");
-        $("#accountInfo").addClass("SelectedItem");
-    }else {
-        $(".ListItem").removeClass("SelectedItem");
-        $("#mints").addClass("SelectedItem");
-    }
-
     $("#logout").click(function(){
         var sendSignal = {exitSignal:true};
         $.ajax({
@@ -32,12 +24,48 @@ $(document).ready(function() {
         });
     });
 
+    $(".ListItem").click(function(){
+        $(".ListItem").removeClass("SelectedItem");
+        $(this).addClass("SelectedItem");
+    });
+
     $("#mints").click(function(){
-        window.location = '/dashboard/mints';
+        $("#userInfoBoard").css("display", "none");
+        $("#userMintBoard").css("display", "block");
     });
 
     $("#accountInfo").click(function(){
-        window.location = '/dashboard/infos';
+        $("#userMintBoard").css("display", "none");
+        $("#userInfoBoard").css("display", "block");
+    });
+
+    $("#submitInfo").click(function(){
+        var accountInfo = {
+            nickname: $().val(),
+            mobilePhone: $().val(),
+            email: $().val(),
+            blog: $().val(),
+            gender: $().val,
+            age: $().val,
+            interestTags: $().val()
+        };
+        $.ajax({
+            data: accountInfo,
+            type: "POST",
+            url: "/dashboard/infos",
+            async: false,
+            dataType: 'text',
+            cache: false,
+            timeout: 5000,
+            success: function(data){
+                var getData = $.parseJSON(data);
+                //$("#")
+            },
+            error: function(jqXHR, textStatus, errorThrown){
+                var info = 'error ' + textStatus + " " + errorThrown;
+                alert(info);
+            }
+        });
     });
 
 });
