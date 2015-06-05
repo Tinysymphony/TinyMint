@@ -5,7 +5,11 @@ var router = express.Router();
 
 router.get('/', checkLogin);
 router.get('/', function (req, res, next) {
-    res.render('home', {title: 'TinyMint | Web Designer'});
+    res.render('editor', {title: 'TinyMint | Web Designer'});
+});
+
+router.post('/', function(req, res, next){
+    res.json({"link": "/editor"});
 });
 
 function checkLogin(req, res, next) {

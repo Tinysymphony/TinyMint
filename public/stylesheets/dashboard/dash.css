@@ -139,3 +139,26 @@ p {
     height: 200px;
 }
 
+.BoardMessage {
+    text-align: center;
+}
+
+.DesignWork {
+    background-color: #444 !important;
+}
+
+.WorkButton {
+    /*background-color: #777 !important;*/
+}
+
+.DeleteButton {
+    color: #fff !important;
+}
+
+#AddButton {
+    background-color: #fff !important;
+}
+
+#AddIcon {
+    cursor: pointer;
+}
