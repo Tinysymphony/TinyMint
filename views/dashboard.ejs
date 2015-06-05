@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/mint/mint.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/mint/title.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/inputB.css" />
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
     <script type="text/javascript" src="/javascripts/modernizr.custom.js"></script>
     <script type="text/javascript" src="/javascripts/dashboard/dash.js"></script>
@@ -28,7 +29,8 @@
     </div>
     <div id="mainBoard">
         <div id="userMenu">
-            <img id="userPic" class="img-circle" alt="Generic placeholder image"  />
+            <img id="userPic" class="img-circle" src="http://avos-bucket.catchkaka.com/1774699440894782headimg552628kq.jpeg@100w_100h.jpg" alt="Generic placeholder image"  />
+            <div id="userName">WyTiny</div>
             <div id="userTinyBar"></div>
             <div id="menuList">
                 <div class="ListItem SelectedItem" id="mints">Mints</div>
@@ -37,31 +39,112 @@
             </div>
         </div>
         <div id="userBoard">
-            <div class="jumbotron">
+            <div class="userTitle jumbotron">
                 <div class="container">
-                    <h1 id="DBTitle">Account Info</h1>
+                    <h1 class="DBTitle">Account Info</h1>
                     <p>Tell me more about you and your privacy is being protected by TintMint :) </p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4"><h2>Tiny</h2></div>
-                <div class="col-lg-4"><h2>Tiny</h2></div>
-                <div class="col-lg-4"><h2>Tiny</h2></div>
-                <div class="col-lg-4"><h2>Tiny</h2></div>
-                <div class="col-lg-4"><h2>Tiny</h2></div>
-                <div class="col-lg-4"><h2>Tiny</h2></div>
+            <div id="InputPartA" class="row tinyrow">
+                <div class="InputItem col-lg-3">
+                    <span class="input input--yoshiko">
+                        <input class="input__field input__field--yoshiko" type="text" id="input-10" />
+                        <label class="input__label input__label--yoshiko" for="input-10">
+                            <span class="input__label-content input__label-content--yoshiko" data-content="Bird's Color">Nickname</span>
+                        </label>
+				    </span>
+                </div>
+                <div class="InputItem col-lg-3">
+                    <span class="input input--yoshiko">
+                        <input class="input__field input__field--yoshiko" type="text" id="input-10" />
+                        <label class="input__label input__label--yoshiko" for="input-10">
+                            <span class="input__label-content input__label-content--yoshiko" data-content="Bird's Color">Mobile Phone</span>
+                        </label>
+				    </span>
+                </div>
+                <div class="InputItem col-lg-3">
+                    <span class="input input--yoshiko">
+                        <input class="input__field input__field--yoshiko" type="text" id="input-10" />
+                        <label class="input__label input__label--yoshiko" for="input-10">
+                            <span class="input__label-content input__label-content--yoshiko" data-content="Bird's Color">Email</span>
+                        </label>
+				    </span>
+                </div>
+                <div class="InputItem col-lg-3">
+                    <span class="input input--yoshiko">
+                        <input class="input__field input__field--yoshiko" type="text" id="input-10" />
+                        <label class="input__label input__label--yoshiko" for="input-10">
+                            <span class="input__label-content input__label-content--yoshiko" data-content="Bird's Color">Blog</span>
+                        </label>
+				    </span>
+                </div>
+                <div class="InputItem col-lg-3">
+                    <span class="input input--yoshiko">
+                        <input class="input__field input__field--yoshiko" type="text" id="input-10" />
+                        <label class="input__label input__label--yoshiko" for="input-10">
+                            <span class="input__label-content input__label-content--yoshiko" data-content="Bird's Color">Gender</span>
+                        </label>
+				    </span>
+                </div>
+                <div class="InputItem  col-lg-3">
+                    <span class="input input--yoshiko">
+                        <input class="input__field input__field--yoshiko" type="text" id="input-10" />
+                        <label class="input__label input__label--yoshiko" for="input-10">
+                            <span class="input__label-content input__label-content--yoshiko" data-content="Bird's Color">Age</span>
+                        </label>
+				    </span>
+                </div>
+            </div>
+            <hr class="featurette-divider" />
+            <div class="row tinyrow">
                 <div class="col-lg-4"><h2>Tiny</h2></div>
                 <div class="col-lg-4"><h2>Tiny</h2></div>
                 <div class="col-lg-4"><h2>Tiny</h2></div>
             </div>
-            <hr class="featurette-divider" />
-            <div class="row">
-                <div class="col-lg-4"><h2>Tiny</h2></div>
-                <div class="col-lg-4"><h2>Tiny</h2></div>
-                <div class="col-lg-4"><h2>Tiny</h2></div>
+            <div class="userTitle jumbotron">
+                <div class="container">
+                    <h2 class="DBTitle">Security & Authentication</h2>
+                    <p>Change your password | Add relation with accounts on other platforms | Bond info with identification </p>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<script src="/javascripts/classie.js"></script>
+<script>
+    (function() {
+        // trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+        if (!String.prototype.trim) {
+            (function() {
+                // Make sure we trim BOM and NBSP
+                var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+                String.prototype.trim = function() {
+                    return this.replace(rtrim, '');
+                };
+            })();
+        }
+
+        [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+            // in case the input is already filled..
+            if( inputEl.value.trim() !== '' ) {
+                classie.add( inputEl.parentNode, 'input--filled' );
+            }
+
+            // events:
+            inputEl.addEventListener( 'focus', onInputFocus );
+            inputEl.addEventListener( 'blur', onInputBlur );
+        } );
+
+        function onInputFocus( ev ) {
+            classie.add( ev.target.parentNode, 'input--filled' );
+        }
+
+        function onInputBlur( ev ) {
+            if( ev.target.value.trim() === '' ) {
+                classie.remove( ev.target.parentNode, 'input--filled' );
+            }
+        }
+    })();
+</script>
 </body>
 </html>
