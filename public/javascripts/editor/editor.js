@@ -104,6 +104,10 @@ $(document).ready(function(){
 
 	});
 
+    $("#backToDashboard").click(function(){
+        window.location = '/dashboard';
+    });
+
 	setSelect();
 
 });

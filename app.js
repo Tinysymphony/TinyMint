@@ -35,8 +35,9 @@ app.use(session({
 }));
 app.use(flash());
 
+//app.use('/', editor);
+
 app.use('/', index);
-//app.use('/', dashboard);
 
 app.use('/editor', editor);
 app.use('/dashboard', dashboard);
