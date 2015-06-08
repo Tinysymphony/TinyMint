@@ -5,16 +5,16 @@ var segmentCount = 3;
 
 $(document).ready(function(){
 
-	if($(document).width() > 1000){
-		$("#editorBoard").css("width", "90%");
-		$("#editorBar").css("width", "10%");
-		$(".Segment").css("font-size", "180%");
-	} 
-	else{
-		$("#editorBoard").css("width", "80%");
-		$("#editorBar").css("width", "20%");
-		$(".Segment").css("font-size", "80%");	
-	}
+	//if($(document).width() > 1000){
+	//	$("#editorBoard").css("width", "90%");
+	//	$("#editorBar").css("width", "10%");
+	//	$(".Segment").css("font-size", "180%");
+	//}
+	//else{
+	//	$("#editorBoard").css("width", "80%");
+	//	$("#editorBar").css("width", "20%");
+	//	$(".Segment").css("font-size", "80%");
+	//}
 
 	$("#fun2").click(function(){
 		var scrollTo = $("#seg7");
@@ -108,6 +108,9 @@ $(document).ready(function(){
         window.location = '/dashboard';
     });
 
+    var editorWidth = parseInt($("#editor").css("width")) - parseInt($("#editorBar").css("width"));
+    $("#editorBoard").css("width", editorWidth + "px");
+
 	setSelect();
 
 });
@@ -123,19 +126,21 @@ function setSelect(){
 }
 
 $(window).resize(function(){
-	if($(document).width() > 1000){
-		barFontSize = "180%";
-
-		$("#editorBoard").css("width", "90%");
-		$("#editorBar").css("width", "10%");
-		$(".Segment").css("font-size", "180%");
-	} 
-	else{
-		barFontSize = "80%";
-		$("#editorBoard").css("width", "80%");
-		$("#editorBar").css("width", "20%");
-		$(".Segment").css("font-size", "80%");	
-	}
+    var editorWidth = parseInt($("#editor").css("width")) - parseInt($("#editorBar").css("width"));
+    $("#editorBoard").css("width", editorWidth + "px");
+	//if($(document).width() > 1000){
+	//	barFontSize = "180%";
+    //
+	//	$("#editorBoard").css("width", "90%");
+	//	$("#editorBar").css("width", "10%");
+	//	$(".Segment").css("font-size", "180%");
+	//}
+	//else{
+	//	barFontSize = "80%";
+	//	$("#editorBoard").css("width", "80%");
+	//	$("#editorBar").css("width", "20%");
+	//	$(".Segment").css("font-size", "80%");
+	//}
 
 	// $(".Pic").css("height", $(".Pic").next().css("height"));
 

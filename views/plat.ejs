@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="wytiny">
+    <title><%= title %></title>
+    <style type="text/css">
+    </style>
+    <link rel="shortcut icon" href="./images/ico/mint.ico">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/editor/plat.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="/javascripts/editor/plat.js"></script>
+    <script type="text/javascript" src="/javascripts/modernizr.custom.js"></script>
+
+</head>
+<body>
+<div class="root">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">TinyMint</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="editor">
+        <div id="middleBar">
+            <div id="barButtonList">
+                <div class="BarButton" id="left"><i class="fa fa-chevron-left"></i></div>
+                <div class="BarButton" id="right"><i class="fa fa-chevron-right"></i></div>
+                <div class="BarButton" id="add"><i class="fa fa-plus"></i></div>
+                <div class="BarButton" id="delete"><i class="fa fa-minus"></i></div>
+                <div class="BarButton" id="top"><i class="fa fa-arrow-up"></i></div>
+                <div class="BarButton" id="refresh"><i class="fa fa-refresh"></i></div>
+                <div class="BarButton" id="save"><i class="fa fa-cloud"></i></div>
+                <div class="BarButton" id="download"><i class="fa fa-download"></i></div>
+            </div>
+        </div>
+        <div id="segmentBoard">
+            <div ID="segmentHolder">
+                <div id="seg1" class="DefaultTitle Segment">
+                    <div class="SegmentTitle SegmentElement">Title</div>
+                    <div class="SegmentContent SegmentElement">
+                        <div class="Pic"></div>
+                        <div id="default" class="TextContent LightUIFont" contenteditable="true" useinlinestyle="true" rtedirty="false" spellcheck="true"><p type="text" class="TextInput">Title</p></div>
+                    </div>
+                    <div class="SegmentAppend SegmentElement">Append</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="addType"></div>
+    <div id="result">
+        <div id="resultBoard"></div>
+        <div id="colorBoard"></div>
+    </div>
+
+</div>
+</body>
+</html>

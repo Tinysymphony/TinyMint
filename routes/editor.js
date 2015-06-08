@@ -3,9 +3,9 @@ var router = express.Router();
 
 /* GET users listing. */
 
-router.get('/', checkLogin);
+//router.get('/', checkLogin);
 router.get('/', function (req, res, next) {
-    res.render('editor', {title: 'TinyMint | Web Designer'});
+    res.render('plat', {title: 'TinyMint | Web Designer'});
 });
 
 router.post('/', function(req, res, next){
