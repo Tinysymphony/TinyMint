@@ -8,6 +8,7 @@
     <style type="text/css">
     </style>
     <link rel="shortcut icon" href="./images/ico/mint.ico">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/editor/menu/addMenu.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/editor/plat.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap/bootstrap.min.css" />
@@ -40,7 +41,7 @@
             <div id="barButtonList">
                 <div class="BarButton" id="left"><i class="fa fa-chevron-left"></i></div>
                 <div class="BarButton" id="right"><i class="fa fa-chevron-right"></i></div>
-                <div class="BarButton" id="add"><i class="fa fa-plus"></i></div>
+                <div class="BarButton" id="add"></div>
                 <div class="BarButton" id="delete"><i class="fa fa-minus"></i></div>
                 <div class="BarButton" id="top"><i class="fa fa-arrow-up"></i></div>
                 <div class="BarButton" id="refresh"><i class="fa fa-refresh"></i></div>
@@ -48,27 +49,68 @@
                 <div class="BarButton" id="download"><i class="fa fa-download"></i></div>
             </div>
         </div>
-        <div id="segmentBoard">
-            <div ID="segmentHolder">
-                <div id="seg1" class="DefaultTitle Segment">
-                    <div class="SegmentTitle SegmentElement">Title</div>
-                    <div class="SegmentContent SegmentElement">
-                        <div class="Pic"></div>
-                        <div id="default" class="TextContent LightUIFont" contenteditable="true" useinlinestyle="true" rtedirty="false" spellcheck="true"><p type="text" class="TextInput">Title</p></div>
+        <div id="segmentContainer">
+            <div id="segmentBoard">
+                <div ID="segmentHolder">
+                    <div id="seg1" class="DefaultTitle Segment">
+                        <div class="SegmentTitle SegmentElement">Title</div>
+                        <div class="SegmentContent SegmentElement">
+                            <div class="Pic"></div>
+                            <div id="default" class="TextContent LightUIFont" contenteditable="true" useinlinestyle="true" rtedirty="false" spellcheck="true"><p type="text" class="TextInput">Title</p></div>
+                        </div>
+                        <div class="SegmentAppend SegmentElement">Append</div>
                     </div>
-                    <div class="SegmentAppend SegmentElement">Append</div>
                 </div>
-
             </div>
+            <div id="blank"></div>
         </div>
     </div>
 
-    <div id="addType"></div>
+    <div id="dl-menu" class="dl-menuwrapper">
+        <button class="dl-trigger">Open Menu</button>
+        <ul class="dl-menu">
+            <li>
+                <a href="#" id="titleLine">Title Line</a>
+            </li>
+            <li>
+                <a href="#">Text</a>
+                <ul class="dl-submenu">
+                    <li><a href="#">Camera &amp; Photo</a></li>
+                    <li><a href="#">TV &amp; Home Cinema</a></li>
+                    <li><a href="#">Phones</a></li>
+                    <li><a href="#">PC &amp; Video Games</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Image</a>
+            </li>
+            <li>
+                <a href="#">Music</a>
+                <ul class="dl-submenu">
+                    <li><a href="#">Fine Jewelry</a></li>
+                    <li><a href="#">Fashion Jewelry</a></li>
+                    <li><a href="#">Watches</a></li>
+                    <li>
+                        <a href="#">Wedding Jewelry</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
     <div id="result">
         <div id="resultBoard"></div>
         <div id="colorBoard"></div>
     </div>
 
 </div>
+<script src="/javascripts/editor/jquery.dlmenu.js"></script>
+<script>
+    $(function() {
+        $( '#dl-menu' ).dlmenu({
+            animationClasses : { classin : 'dl-animate-in-2', classout : 'dl-animate-out-2' }
+        });
+    });
+</script>
 </body>
 </html>
