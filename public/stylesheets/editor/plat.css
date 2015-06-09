@@ -4,11 +4,16 @@
     /*min-width: 700px;*/
 }
 
+.container {
+    color: #fff;
+}
+
 #editor {
     position: absolute;
     width: 40%;
     height: 100%;
     float: left;
+    background-color: #00C5CD;
     box-shadow: 2px 2px 10px 1px #999;
     overflow: hidden;
 }
@@ -18,7 +23,7 @@
     position: absolute;
     width: 60px;
     height: 100%;
-    background-color: #ddd;
+    background-color: #F98262;
     z-index: 20;
 }
 
@@ -57,7 +62,7 @@
 #dl-menu {
     top:210px;
     position: absolute;
-    left: 486px;
+    left: 37%;
     font-size: 2em;
     z-index: 300;
 }
@@ -97,47 +102,6 @@
     margin-bottom: 30px;
 }
 
-/*.Segment {*/
-    /*height: auto;*/
-    /*min-height: 100px !important;*/
-    /*width: 100%;*/
-    /*background-color: #c5564a;*/
-    /*box-shadow: 2px 4px 8px 1px #888;*/
-    /*padding: 5px;*/
-    /*font-family: 'Lato', Calibri, Arial, sans-serif;*/
-/*}*/
-
-/*SegElement*/
-
-/*.SegElement {*/
-    /*background-color: #f0f0f0;*/
-    /*margin: 10px;*/
-/*}*/
-
-/*.SegTitle {*/
-    /*height: auto;*/
-    /*min-height: 35px;*/
-/*}*/
-
-/*.SegContent {*/
-    /*height: auto;*/
-    /*min-height: 70px;*/
-/*}*/
-
-/*.SegPicture {*/
-    /*float: left;*/
-    /*height: 70px;*/
-    /*width: 20%;*/
-/*}*/
-
-/*.SegText {*/
-    /*float: right;*/
-    /*width: 70%;*/
-    /*height: auto;*/
-    /*min-height: 70px;*/
-/*}*/
-
-
 .Segment {
     position: relative;
     /*padding: 2% 4%;*/
@@ -152,7 +116,7 @@
     box-shadow: 2px 2px 10px 1px #666;
     z-index: 50;
     height: auto!important;
-    min-height: 80px;
+    min-height: 100px;
     min-width: 150px;
     transition: .5s;
 }
@@ -209,7 +173,7 @@
     overflow: none;
     padding: 2%;
     height: auto!important;
-    min-height: 50px;
+    min-height: 100px;
     width: 90%;
     padding-right: 5%;
     white-space: pre-wrap;
