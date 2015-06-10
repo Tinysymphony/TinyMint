@@ -52,13 +52,20 @@
             <div id="segmentContainer">
                 <div id="segmentBoard">
                     <div ID="segmentHolder">
-                        <div id="seg1" class="DefaultTitle Segment">
-                            <div class="SegmentTitle SegmentElement">Title</div>
-                            <div class="SegmentContent SegmentElement">
-                                <div class="Pic"></div>
-                                <div id="default" class="TextContent LightUIFont" contenteditable="true" useinlinestyle="true" rtedirty="false" spellcheck="true"><p type="text" class="TextInput">Title</p></div>
+                        <div id="seg1" class="DefaultTitle Segment row">
+                            <div class="col-md-12">
+                                <div class="fa fa-home"> Title</div>
+                                <hr class='featurette-divider' />
+                                <div class="row">
+                                    <div class="col-md-3 Pic">
+                                        <img id="addIcon" class="img-circle" src="/images/mints-pic/plus.png" alt="Plus" />
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input id="titleText" class="form-control" placeholder="Title Text">
+                                        <input class="form-control" placeholder="Author">
+                                    </div>
+                                </div>
                             </div>
-                            <!--<div class="SegmentAppend SegmentElement">Append</div>-->
                         </div>
                     </div>
                 </div>
@@ -72,7 +79,7 @@
                 <li>
                     <a href="#">Text</a>
                     <ul class="dl-submenu">
-                        <li><a href="#" id="headLine">Head</a></li>
+                        <li><a href="#" id="headLine">Headline</a></li>
                         <li><a href="#" id="paragraph">Paragraph</a></li>
                         <li><a href="#" id="article">Article</a></li>
                         <li><a href="#" id="markdown">Markdown</a></li>
@@ -108,6 +115,9 @@
                 animationClasses : { classin : 'dl-animate-in-2', classout : 'dl-animate-out-2' }
             });
         });
+        function resize(tmp){
+            tmp.style.height = tmp.scrollTop + tmp.scrollHeight + "px";
+        }
     </script>
 </body>
 </html>

@@ -59,6 +59,15 @@
     height: 100%;
 }
 
+.Segment img {
+    width: 80% !important;
+}
+
+.LongText {
+    overflow-y: hidden!important;
+    height: 40px;
+}
+
 #dl-menu {
     top:210px;
     position: absolute;
@@ -96,6 +105,9 @@
     z-index: 6;
 }
 
+.SegTitle {
+    float: left;
+}
 
 .TinyRow {
     margin-top: 30px;
@@ -127,69 +139,41 @@
     left: 0;
 }
 
-.SegmentTitle {
-    height: 20%;
-    background-color: #eee;
-    z-index: 57;
+.UploadButton {
+    color: #fff !important;
+    background-color: #00C5CD !important;
+    border: none !important;
 }
 
-.SegmentContent {
-    position: relative;
-    margin-top: 2%;
-    height: 100%;
-    /*background-color: none;*/
-    z-index: 55;
-    overflow: hidden;
+.PictureLink {
 }
 
-.Pic {
-    position: absolute;
-    float: left;
-    height: 100%;
-    width: 24%;
-    left: 0px;
+/*.Pic {*/
+    /*position: absolute;*/
+    /*float: left;*/
+    /*height: 100% !important;*/
+    /*width: 24%;*/
+    /*left: 0px;*/
+    /*cursor: pointer;*/
+    /*background-color: #eee;*/
+    /*z-index: 56;*/
+/*}*/
+
+
+#addIcon {
+    width: 100%!important;
     cursor: pointer;
-    background-color: #eee;
-    z-index: 56;
 }
 
-.TextContent {
-    position: relative;
-    float: left;
-    margin-left: 26%;
-    height: auto;
-    width: 74%;
-    background-color: #eee;
-    text-align: left;
-    line-height: 100%;
-    z-index: 56;
-
-    box-shadow: none;
-
+.form-control {
+    margin-top: 15px!important;
+    border: 2px solid #f2dede !important;
 }
 
-.TextInput {
-    position: relative;
-    overflow: none;
-    padding: 2%;
-    height: auto!important;
-    min-height: 100px;
-    width: 90%;
-    padding-right: 5%;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    cursor: auto;
-
-    z-index: 59;
+.form-control:focus {
+    box-shadow: none !important;
 }
 
-.SegmentAppend {
-    margin-top: 2%;
-    height: 10%;
-    background-color: #eee;
-    font-size: 80%;
-    z-index: 60;
-}
 
 /*---------------------*/
 

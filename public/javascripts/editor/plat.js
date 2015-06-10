@@ -25,47 +25,166 @@ $(document).ready(function(){
 
     //-----Add Button Start-----//
     $("#headLine").click(function(){
-        var newSegment = "<div class='Segment Seg-HeadLine' >Headline</div>";
+        var newSegment = "" +
+            "<div class='Segment Seg-Headline row' >" +
+            "<div class='col-md-12'>" +
+            "<div class='fa fa-quote-left'> Headline</div>" +
+            "<hr class='featurette-divider' />" +
+            "<div>" +
+            "<div class='form-group'>" +
+            "<input type='text' id='headline-main-title' placeholder='Main Title' class='form-control'>" +
+            "<input type='text' id='headline-subtitle' placeholder='Subtitle' class='form-control'>" +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "</div>";
         appendSegment(newSegment);
     });
 
     $("#paragraph").click(function(){
-        var newSegment = "<div class='Segment Seg-Paragraph' >Paragraph</div>";
+        var newSegment = "" +
+            "<div class='Segment Seg-Paragraph row' >" +
+            "<div class='col-md-12'>" +
+            "<div class='fa fa-pencil'> Paragraph</div>" +
+            "<hr class='featurette-divider' />" +
+            "<div>" +
+            "<div class='form-group'>" +
+            "<input type='text' id='paragraph-content' placeholder='Content' class='form-control'>" +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "</div>";
         appendSegment(newSegment);
     });
 
     $("#article").click(function(){
-        var newSegment = "<div class='Segment Seg-Article' >Article</div>";
+        var newSegment = "" +
+            "<div class='Segment Seg-Paragraph row' >" +
+            "<div class='col-md-12'>" +
+            "<div class='fa fa-edit'> Article</div>" +
+            "<hr class='featurette-divider' />" +
+            "<div>" +
+            "<div class='form-group'>" +
+            "<textarea id='article-content' class='form-control LongText' placeholder='Paste your article here' onpropertychange='resize(this)' oninput='resize(this)'></textarea>" +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "</div>";
         appendSegment(newSegment);
     });
 
     $("#markdown").click(function(){
-        var newSegment = "<div class='Segment Seg-Markdown' >MD</div>";
+        var newSegment = "" +
+            "<div class='Segment Seg-Paragraph row' >" +
+            "<div class='col-md-12'>" +
+            "<div class='fa fa-list-alt'> Markdown</div>" +
+            "<hr class='featurette-divider' />" +
+            "<div>" +
+            "<div class='form-group'>" +
+            "<textarea id='markdown-content' class='form-control LongText' placeholder='Markdown content' onpropertychange='resize(this)' oninput='resize(this)'></textarea>" +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "</div>" +
+            "</div>";
         appendSegment(newSegment);
     });
 
     $("#gallery").click(function(){
-        var newSegment = "<div class='Segment Seg-Gallery' >Gallery</div>";
+        var newSegment = "" +
+            "<div class='Segment Seg-Gallery row' >" +
+                "<div class='col-md-12'>" +
+                    "<div class='fa fa-photo'> Gallery</div>" +
+                    "<hr class='featurette-divider' />" +
+                    "<div>" +
+                        "<div class='form-group PictureLink'>" +
+                            "<input type='text' placeholder='Picture url' class='form-control'>" +
+                             "<input type='text' placeholder='or Upload local Picture' class='form-control'>" +
+                        "</div>" +
+                        "<a class='btn btn-default UploadButton'>Append</a>" +
+                    "</div>" +
+                "</div>" +
+            "</div>";
         appendSegment(newSegment);
     });
 
     $("#circles").click(function(){
-        var newSegment = "<div class='Segment Seg-Circles' >Circles</div>";
+        var newSegment = "" +
+            "<div class='Segment Seg-Circles row' >" +
+                "<div class='col-md-12'>" +
+                    "<div class='fa fa-photo'> Circles</div>" +
+                    "<hr class='featurette-divider' />" +
+                    "<div class='row'>" +
+                        "<div class='col-md-2'><a class='btn btn-default UploadButton'>Upload</a></div>" +
+                        "<div class='col-md-10'>" +
+                            "<input type='text' placeholder='Text under picture' class='form-control'>" +
+                        "</div>" +
+                    "</div>" +
+                    "<div class='row'>" +
+                        "<div class='col-md-2'><a class='btn btn-default UploadButton'>Upload</a></div>" +
+                        "<div class='col-md-10'>" +
+                            "<input type='text' placeholder='Text under picture' class='form-control'>" +
+                        "</div>" +
+                    "</div>" +
+                    "<div class='row'>" +
+                        "<div class='col-md-2'><a class='btn btn-default UploadButton'>Upload</a></div>" +
+                        "<div class='col-md-10'>" +
+                            "<input type='text' placeholder='Text under picture' class='form-control'>" +
+                        "</div>" +
+                    "</div>" +
+                    "</div>" +
+                "</div>" +
+            "</div>";
         appendSegment(newSegment);
     });
 
     $("#single").click(function(){
-        var newSegment = "<div class='Segment Seg-Single' >Single</div>";
+        var newSegment = "" +
+            "<div class='Segment Seg-Single row' >" +
+                "<div class='col-md-12'>" +
+                    "<div class='fa fa-photo'> Single</div>" +
+                    "<hr class='featurette-divider' />" +
+                    "<div>" +
+                        "<div class='form-group PictureLink'>" +
+                            "<input type='text' placeholder='Picture url' class='form-control'>" +
+                            "<input type='text' placeholder='or Upload local Picture' class='form-control'>" +
+                            "</div>" +
+                                "<a class='btn btn-default UploadButton'>Upload</a>" +
+                            "</div>" +
+                        "</div>" +
+                "</div>" +
+            "</div>";
         appendSegment(newSegment);
     });
 
     $("#music").click(function(){
-        var newSegment = "<div class='Segment Seg-Article' >Music</div>";
+        if($(".Seg-Music").length!=0){
+            alert("music is unique!");
+            return;
+        }
+        var newSegment = "" +
+            "<div class='Segment Seg-Music row' >" +
+                "<div class='col-md-12'>" +
+                    "<div class='fa fa-music'> Music</div>" +
+                    "<hr class='featurette-divider' />" +
+                    "<input type='text' placeholder='Music Link' class='form-control'>" +
+                "</div>" +
+            "</div>";
         appendSegment(newSegment);
     });
 
     $("#video").click(function(){
-        var newSegment = "<div class='Segment Seg-Music' >Video</div>";
+        var newSegment = "" +
+            "<div class='Segment Seg-Video row' >" +
+                "<div class='col-md-12'>" +
+                    "<div class='fa fa-film'> Video</div>" +
+                    "<hr class='featurette-divider' />" +
+                    "<input type='text' placeholder='Video Link' class='form-control'>" +
+                "</div>" +
+            "</div>";
         appendSegment(newSegment);
     });
     //-----Add Button End-----//
@@ -106,9 +225,11 @@ function appendSegment(newSegment){
     setTimeout(setSelect(),0);
     scrollTo.attr("id", segmentID);
     scrollTo.addClass("Selected");
-    scrollTo.css({"background-color":"#EEC900"});
+    //scrollTo.css({"background-color":"#EEC900"});
+    scrollTo.css({"border":"8px solid #EEC900"});
     $(".Segment").not(scrollTo).removeClass("Selected");
-    $(".Segment").not(scrollTo).css({"background-color":"#fff"});
+    //$(".Segment").not(scrollTo).css({"background-color":"#fff"});
+    $(".Segment").not(scrollTo).css({"border":"none"});
 }
 
 function fold(){
@@ -124,9 +245,11 @@ function unfold(){
 function setSelect(){
     $(".Segment").click(function(){
         $(this).addClass("Selected");
-        $(this).css({"background-color":"#EEC900"});
+        //$(this).css({"background-color":"#EEC900"});
+        $(this).css({"border":"8px solid #EEC900"});
         $(".Segment").not(this).removeClass("Selected");
-        $(".Segment").not(this).css({"background-color":"#fff"});
+        //$(".Segment").not(this).css({"background-color":"#fff"});
+        $(".Segment").not(this).css({"border":"none"});
     });
 }
 
