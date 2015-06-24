@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/', checkLogin);
+//router.get('/', checkLogin);
 router.get('/', function(req, res, next){
     res.render('dashboard', {
-        title: "TinyMint | " + req.session.user.name + " Dashboard"
-        //title: "TinyMint | " + " Dashboard"
+        //title: "TinyMint | " + req.session.user.name + " Dashboard"
+        title: "TinyMint | " + " Dashboard"
     });
 });
 

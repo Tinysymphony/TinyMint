@@ -73,7 +73,7 @@ $(document).ready(function() {
     $("#AddIcon").click(function(){
         count ++;
         var newID = "mint" + count;
-        var newMInt = "<div id='" + newID +"' class='product DesignWork'>" +
+        var newMint = "<div id='" + newID +"' class='product DesignWork'>" +
             "<div class='product__info'> <img class='product__image' src='/images/mint-default.png' alt='TinyMint' /> " +
             "<h3 class='product__title'>Init Mint</h3> " +
             "<button class='action action--button action--buy WorkButton EditMint'><span class='action__text'>Edit</span></button> " +
@@ -82,7 +82,7 @@ $(document).ready(function() {
             "<button class='action action--button action--buy WorkButton DeleteMint'><span class='action__text'>Delete</span></button> " +
             "</div> " +
             "</div>"
-        $("#AddButton").before(newMInt);
+        $("#AddButton").before(newMint);
 
         //needs database operations
 
