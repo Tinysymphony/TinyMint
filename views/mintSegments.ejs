@@ -35,8 +35,8 @@
             <hr class='featurette-divider' />
             <div>
                 <div class='form-group'>
-                    <textarea id='article-content' class='form-control LongText' placeholder='Paste your article here' onpropertychange='resize(this)' oninput='resize(this)'>
-                    </textarea>
+                    <input type='text' id='article-title' placeholder='Content' class='form-control'>
+                    <textarea id='article-content' class='form-control LongText' placeholder='Paste your article here' onpropertychange='resize(this)' oninput='resize(this)'></textarea>
                 </div>
             </div>
         </div>
@@ -50,8 +50,7 @@
             <hr class='featurette-divider' />
             <div>
                 <div class='form-group'>
-                    <textarea id='markdown-content' class='form-control LongText' placeholder='Markdown content' onpropertychange='resize(this)' oninput='resize(this)'>
-                    </textarea>
+                    <textarea id='markdown-content' class='form-control LongText' placeholder='Markdown content' onpropertychange='resize(this)' oninput='resize(this)'></textarea>
                 </div>
             </div>
         </div>
@@ -65,8 +64,9 @@
             <hr class='featurette-divider' />
             <div>
                 <div class='form-group PictureLink'>
-                    <input type='text' placeholder='Picture url' class='form-control'>
-                    <input type='text' placeholder='or Upload local Picture' class='form-control'>
+                    <input id="gallery-link1" type='text' placeholder='Picture url A' class='form-control'>
+                    <input id="gallery-link2" type='text' placeholder='Picture url B' class='form-control'>
+                    <input id="gallery-link3" type='text' placeholder='Picture url C' class='form-control'>
                 </div>
                 <a class='btn btn-default UploadButton'>Append</a>
             </div>
@@ -79,23 +79,17 @@
         <div class='col-md-12'>
             <div class='fa fa-photo'> Circles</div>
             <hr class='featurette-divider' />
-            <div class='row'>
-                <div class='col-md-2'><a class='btn btn-default UploadButton'>Upload</a></div>
-                <div class='col-md-10'>
-                    <input type='text' placeholder='Text under picture' class='form-control'>
-                    </div>
+            <a class='btn btn-default UploadButton'>Upload</a>
+            <div class='form-group PictureLink'>
+                <input type='text' placeholder='Content under picture' class='form-control'>
             </div>
-            <div class='row'>
-                <div class='col-md-2'><a class='btn btn-default UploadButton'>Upload</a></div>
-                <div class='col-md-10'>
-                    <input type='text' placeholder='Text under picture' class='form-control'>
-                </div>
+            <a class='btn btn-default UploadButton'>Upload</a>
+            <div class='form-group PictureLink'>
+                <input type='text' placeholder='Content under picture' class='form-control'>
             </div>
-            <div class='row'>
-                <div class='col-md-2'><a class='btn btn-default UploadButton'>Upload</a></div>
-                <div class='col-md-10'>
-                    <input type='text' placeholder='Text under picture' class='form-control'>
-                </div>
+            <a class='btn btn-default UploadButton'>Upload</a>
+            <div class='form-group PictureLink'>
+                <input type='text' placeholder='Content under picture' class='form-control'>
             </div>
         </div>
     </div>
@@ -108,10 +102,23 @@
             <hr class='featurette-divider' />
             <div>
                 <div class='form-group PictureLink'>
-                    <input type='text' placeholder='Picture url' class='form-control'>
-                    <input type='text' placeholder='or Upload local Picture' class='form-control'>
+                    <input id="single-link" type='text' placeholder='Picture url' class='form-control'>
+                    <input type='text' id='single-content' placeholder='Append a paragraph' class='form-control'>
                 </div>
-                <a class='btn btn-default UploadButton'>Upload</a>
+                <div id="singleType" class="btn-group" data-toggle="buttons">
+                    <label id="s-bottom" class="btn btn-info active">
+                        <input type="radio" autocomplete="off" checked> Bottom
+                    </label>
+                    <label id="s-top" class="btn btn-info">
+                        <input type="radio" autocomplete="off"> Top
+                    </label>
+                    <label id="s-left" class="btn btn-info">
+                        <input type="radio" autocomplete="off"> Left
+                    </label>
+                    <label id="s-right" class="btn btn-info">
+                        <input type="radio" autocomplete="off"> Right
+                    </label>
+                </div>
             </div>
         </div>
     </div>

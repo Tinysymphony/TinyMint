@@ -134,7 +134,7 @@ function loadMint(){
 
     $("#resultBoard").empty();
 
-    var size = $(".Segment").length;
+    var size = $("#segmentHolder").children(".Segment").length;
 
     for(var i=0; i<size; i++){
 
@@ -164,7 +164,8 @@ function loadMint(){
         }else if(segment.hasClass("Seg-Article")){
 
             var articleContent = segment.find("#article-content").val();
-            var segData = {"articleContent": articleContent};
+            var articleTitle = segment.find("#article-title").val();
+            var segData = {"articleContent": articleContent, "articleTitle": articleTitle};
             newSegment.load("editor/modules #article", segData);
 
         }else if(segment.hasClass("Seg-Markdown")){
@@ -172,23 +173,41 @@ function loadMint(){
 
         }else if(segment.hasClass("Seg-Single")){
 
+            var link = segment.find("#single-link").val();
+            var content = segment.find("#single-content").val();
+            var segData = {"singleLink": link, "singleContent": content};
+
+            var type = segment.find("#singleType").children(".active").attr("id");
+            if(type=="s-bottom")
+                newSegment.load("editor/modules #single-bottom", segData);
+            else if(type=="s-top")
+                newSegment.load("editor/modules #single-top", segData);
+            else if(type=="s-left")
+                newSegment.load("editor/modules #single-left", segData);
+            else if(type=="s-right")
+                newSegment.load("editor/modules #single-right", segData);
 
         }else if(segment.hasClass("Seg-Circles")){
 
         }else if(segment.hasClass("Seg-Gallery")){
 
-            var id = segment.attr("id");
-
-            newSegment.load("editor/modules #gallery");
-
+            var link1 =  segment.find("#gallery-link1").val();
+            var link2 =  segment.find("#gallery-link2").val();
+            var link3 =  segment.find("#gallery-link3").val();
+            var segData = {"galleryLink1": link1, "galleryLink2": link2, "galleryLink3": link3};
+            newSegment.load("editor/modules #carousel-example-generic", segData); //TODO change the plugin
 
         }else if(segment.hasClass("Seg-Music")){
 
         }else if(segment.hasClass("Seg-Video")){
 
+            var videoLink =  segment.find("#video-link1").val();
+            var segData = {"videoLink": videoLink};
+            newSegment.load("editor/modules #video", segData);
+
         }
 
-        if(i%2 && !segment.hasClass("Seg-Paragraph"))
+        if(i%2 && !segment.hasClass("Seg-Article"))
             newSegment.css("background-color", "#e4e4e4");
         else
             newSegment.css("background-color", "#fff");

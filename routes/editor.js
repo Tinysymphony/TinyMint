@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET users listing. */
 
-//router.get('/', checkLogin);
+router.get('/', checkLogin);
 router.get('/', function (req, res, next) {
     res.render('plat', {title: 'TinyMint | Web Designer'});
 });
