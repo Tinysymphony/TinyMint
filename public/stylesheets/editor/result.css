@@ -1,0 +1,108 @@
+
+#result {
+    /*float: left;*/
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    top: 50px;
+    right: 0;
+    /*background-color: #fde8af;*/
+    z-index: 3;
+    overflow: hidden;
+
+}
+
+
+
+#resultBoard {
+    /*position: relative;*/
+    font-family: 'raleway' !important;
+    overflow: auto ;
+    z-index: 4;
+    height: 100%;
+}
+
+#colorBoard {
+    /*height: 20%;*/
+}
+
+.MintShow {
+    transition: 0.5s;
+}
+
+.MintShow p {
+    color: #7B7B7F!important;
+    word-wrap: break-word;
+    word-break:break-all;
+}
+
+.MintShow h1 {
+    color: #7B7B7F!important;
+}
+
+.MintArticle .jumbotron{
+    border: 2px solid #6495ED;
+}
+
+.MintArticle p {
+    word-wrap: break-word;
+    word-break:break-all;
+}
+
+.MintParagraph p {
+    text-align: center !important;
+    font-size: 2.5em !important;
+    word-wrap: break-word;
+    word-break:break-all;
+}
+
+.SingleHolder {
+    padding-left: 15%;
+    padding-right: 15%;
+    align-content: center;
+    text-align: center;
+}
+
+.MintSingle p {
+    font-size: 2.5em!important;
+    word-wrap: break-word;
+    word-break:break-all;
+}
+
+.MintCircle {
+    height: 200px;
+    width: 200px;
+    margin-bottom: 15px;
+}
+
+.MintMarkHtml {
+    margin: 40px;
+}
+
+.MintFrame {
+    height: auto;
+    width: auto;
+    /*align-content: center!important;*/
+    text-align: center;
+    /*padding-top: 30px;*/
+    padding-bottom: 56.25%;
+}
+
+
+.MintFrame iframe {
+    left: 0;
+    right: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+}
+
+.wrapper {
+    height: auto;
+
+}
+
+.jumbotron {
+    background-color: transparent!important;
+}

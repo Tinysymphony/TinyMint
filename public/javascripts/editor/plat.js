@@ -169,7 +169,10 @@ function loadMint(){
             newSegment.load("editor/modules #article", segData);
 
         }else if(segment.hasClass("Seg-Markdown")){
-            //add markdown editor
+
+            var markdown = segment.find("#markdown-content").val();
+            var segData = {"markdown": markdown};
+            newSegment.load("editor/markdown", segData);
 
         }else if(segment.hasClass("Seg-Single")){
 
@@ -189,6 +192,29 @@ function loadMint(){
 
         }else if(segment.hasClass("Seg-Circles")){
 
+            var cLink1 = segment.find("#circle-link1").val();
+            var cLink2 = segment.find("#circle-link2").val();
+            var cLink3 = segment.find("#circle-link3").val();
+            var cTitle1 = segment.find("#circle-title1").val();
+            var cTitle2 = segment.find("#circle-title2").val();
+            var cTitle3 = segment.find("#circle-title3").val();
+            var cContent1 = segment.find("#circle-content1").val();
+            var cContent2 = segment.find("#circle-content2").val();
+            var cContent3 = segment.find("#circle-content3").val();
+            var segData = {
+                "circleLink1": cLink1,
+                "circleLink2": cLink2,
+                "circleLink3": cLink3,
+                "circleTitle1": cTitle1,
+                "circleTitle2": cTitle2,
+                "circleTitle3": cTitle3,
+                "circleContent1": cContent1,
+                "circleContent2": cContent2,
+                "circleContent3": cContent3
+            }
+            newSegment.load("editor/modules #circles", segData);
+
+
         }else if(segment.hasClass("Seg-Gallery")){
 
             var link1 =  segment.find("#gallery-link1").val();
@@ -201,7 +227,15 @@ function loadMint(){
 
         }else if(segment.hasClass("Seg-Video")){
 
-            var videoLink =  segment.find("#video-link1").val();
+            var videoLinkInput =  segment.find("#video-link").val().split(" ");
+            var videoLink ="";
+            var re = /src="*/g;
+            for(var index in videoLinkInput){
+                var element = videoLinkInput[index];
+                if(re.test(element)){
+                    videoLink = element.split('"')[1]; // split by "
+                }
+            }
             var segData = {"videoLink": videoLink};
             newSegment.load("editor/modules #video", segData);
 

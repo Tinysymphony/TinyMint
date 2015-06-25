@@ -14,6 +14,7 @@
     "morgan": "~1.5.3",
     "serve-favicon": "~2.2.1",
     "bcrypt": ">=0.7.3",
-    "redis": ">=0.7.2"
+    "redis": ">=0.7.2",
+    "markdown-js": ">=0.0.1"
   }
 }
