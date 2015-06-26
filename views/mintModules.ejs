@@ -1,4 +1,18 @@
 
+<header id="header" class="mockup-header mockup-section--dark paint-area">
+    <div class="mockup-content mockup-grid mockup-grid--spread">
+        <span class="mockup-logo paint-area paint-area--text">
+            <i class="fa fa-play"></i>
+            <span><%=Data['title']%></span>
+        </span>
+        <nav class="mockup-nav paint-area paint-area--text">
+            <span>About</span>
+            <span>Solutions</span>
+            <span>Contact</span>
+        </nav>
+    </div>
+</header>
+
 <div id="headline" class='jumbotron MintHeadline'>
     <div class='container'>
         <h1 id="headline-h" class="paint-area paint-area--text"><%=Data['mainTitle']%></h1>
@@ -8,16 +22,16 @@
 
 <div id="paragraph" class="MintParagraph">
     <div class="jumbotron">
-        <p id="paragraph-p" class="lead"><%=Data['paraContent']%></p>
+        <p id="paragraph-p" class="paint-area  paint-area--text lead"><%=Data['paraContent']%></p>
     </div>
 </div>
 
 <div id="article" class="MintArticle">
     <div class="container">
         <div class="jumbotron">
-            <h1><%=Data['articleTitle']%></h1>
-            <hr class='featurette-divider' />
-            <p><%=Data['articleContent']%></p>
+            <h1 class="paint-area--text paint-area"><%=Data['articleTitle']%></h1>
+            <hr class='featurette-divider'/>
+            <p class="paint-area--text paint-area"><%=Data['articleContent']%></p>
         </div>
     </div>
 </div>
@@ -27,7 +41,7 @@
         <div class="SingleHolder">
             <img src="<%=Data['singleLink']%>" alt="..." class="img-thumbnail">
             <br />
-            <p><%=Data['singleContent']%></p>
+            <p class="paint-area paint-area--text"><%=Data['singleContent']%></p>
         </div>
     </div>
 </div>
@@ -35,7 +49,7 @@
 <div id="single-top" class="MintSingle">
     <div class="jumbotron">
         <div class="SingleHolder">
-            <p><%=Data['singleContent']%></p>
+            <p class="paint-area paint-area--text"><%=Data['singleContent']%></p>
             <img src="<%=Data['singleLink']%>" alt="..." class="img-thumbnail">
         </div>
     </div>
@@ -45,7 +59,7 @@
     <div class="jumbotron">
         <div class="row SingleHolder">
             <div class="col-lg-5">
-                <p><%=Data['singleContent']%></p>
+                <p class="paint-area paint-area--text"><%=Data['singleContent']%></p>
             </div>
             <div class="col-lg-7">
                 <img src="<%=Data['singleLink']%>" alt="..." class="img-thumbnail">
@@ -61,7 +75,7 @@
                 <img src="<%=Data['singleLink']%>" alt="..." class="img-thumbnail">
             </div>
             <div class="col-lg-5">
-                <p><%=Data['singleContent']%></p>
+                <p class="paint-area paint-area--text"><%=Data['singleContent']%></p>
             </div>
         </div>
     </div>
@@ -77,17 +91,17 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-        <div class="item active">
+        <div class="item active GalleryPic">
             <img src="<%= Data['galleryLink1']%>" alt="...">
             <div class="carousel-caption">
             </div>
         </div>
-        <div class="item">
+        <div class="item GalleryPic">
             <img src="<%= Data['galleryLink2']%>" alt="...">
             <div class="carousel-caption">
             </div>
         </div>
-        <div class="item">
+        <div class="item GalleryPic">
             <img src="<%= Data['galleryLink3']%>" alt="...">
             <div class="carousel-caption">
             </div>
@@ -105,28 +119,28 @@
 </div>
 
 <div id="circles" class="MintCircles">
-    <!--http://img5.duitang.com/uploads/item/201410/12/20141012025626_ARXyx.thumb.700_0.jpeg-->
+    <!-- -->
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
-                <div class="tile">
+                <div class="tile paint-area">
                     <img class="img-circle MintCircle" alt="" src="<%=Data['circleLink1']%>">
-                    <h3><%=Data['circleTitle1']%></h3>
-                    <p><%=Data['circleContent1']%></p>
+                    <h3 class="paint-area paint-area--text"><%=Data['circleTitle1']%></h3>
+                    <p class="paint-area paint-area--text"><%=Data['circleContent1']%></p>
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="tile">
+                <div class="tile paint-area">
                     <img class="img-circle MintCircle" alt="" src="<%=Data['circleLink2']%>">
-                    <h3><%=Data['circleTitle2']%></h3>
-                    <p><%=Data['circleContent2']%></p>
+                    <h3 class="paint-area paint-area--text"><%=Data['circleTitle2']%></h3>
+                    <p class="paint-area paint-area--text"><%=Data['circleContent2']%></p>
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="tile">
+                <div class="tile paint-area">
                     <img class="img-circle MintCircle" alt="" src="<%=Data['circleLink3']%>">
-                    <h3><%=Data['circleTitle3']%></h3>
-                    <p><%=Data['circleContent3']%></p>
+                    <h3 class="paint-area paint-area--text"><%=Data['circleTitle3']%></h3>
+                    <p class="paint-area paint-area--text"><%=Data['circleContent3']%></p>
                 </div>
             </div>
         </div>

@@ -26,7 +26,7 @@ body {
     color: #f2ede3;
     background: #333;
     font-size: 0.9em;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 a {
@@ -42,6 +42,23 @@ a {
 a:hover {
 	color: #fff;
 }
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.4em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+h1,h2,h3,h4,h5 {
+    font-weight: 400;
+}
+
 
 .WebContainer {
     width: 100%;
@@ -194,7 +211,7 @@ div.bl-panel-items > div > div {
 .bl-content p {
 	margin: 0 auto;
 	padding-bottom: 15px;
-	font-size: 1.7em;
+	font-size: 1.4em;
 	line-height: 1.8;
 }
 

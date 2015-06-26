@@ -217,9 +217,18 @@ body {
     box-shadow: none !important;
 }
 
+.InfoText {
+    /*font-family: "Lato", Helvetica, Arial, sans-serif;*/
+    color: #eeeeee;
+}
 
-/*---------------------*/
+.dl-menu a {
+    font-family: "SensibilityMedium", Helvetica, Arial, sans-serif;
+}
 
+.navbar a {
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+}
 
 
 /*scrollbar*/

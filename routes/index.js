@@ -14,7 +14,7 @@ router.get('/', function (req, res, next) {
 
 router.post('/', function (req, res, next) {
 
-    var data = req.body;
+    var data = req.body.data;
 
     //login section
     if (data.login) {

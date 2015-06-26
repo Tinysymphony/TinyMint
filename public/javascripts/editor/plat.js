@@ -74,6 +74,15 @@ $(document).ready(function(){
         $("#segmentContainer").animate({scrollTop:$("#seg1").offset().top},500);
     });
 
+    $("#cloudSave").click(function(){
+        savePage();
+    });
+
+    $("#download").click(function () {
+        savePage();
+        downloadArchive();
+    });
+
     $("#dl-menu").css("left", $("#add").offset().left);
 
     setSelect();
@@ -147,6 +156,10 @@ function loadMint(){
         newSegment.addClass("MintShow");
 
         if(segment.hasClass("DefaultTitle")){
+
+            var title = segment.find("#titleText").val();
+            var segData = {"title": title};
+            newSegment.load("editor/modules #header", segData);
 
         }else if(segment.hasClass("Seg-Headline")){
 
@@ -252,3 +265,47 @@ function loadMint(){
 $(window).resize(function(){
     $("#dl-menu").css("left", $("#add").offset().left);
 });
+
+function savePage(){
+    var name = $("#titleText").val();
+    var author = $("#author").val();
+    var data = $("#resultBoard").html();
+    var webData = {
+        filename: name,
+        author: author,
+        sections: data
+    }
+    $.ajax({
+        data: webData,
+        type: "POST",
+        url: "/editor/save",
+        cache: false,
+        async: false,
+        timeout: 5000,
+        success: function(data){
+            var getData = $.parseJSON(data);
+            alert(getData.info);
+        },
+        error: function(jqXHR, textStatus, errorThrown){
+            alert(textStatus + errorThrown);
+        }
+    });
+}
+
+function downloadArchive(){
+    var name = $("#titleText").val();
+    //alert(name);
+    var form=$("<form>");
+    form.attr("style","display:none");
+    form.attr("target","");
+    form.attr("method","post");
+    form.attr("action","/editor/download");
+    var inputTitle=$("<input>");
+    inputTitle.attr("type","hidden");
+    inputTitle.attr("name","title");
+    inputTitle.attr("value",name);
+    $("body").append(form);
+    form.append(inputTitle);
+    form.submit();
+
+}
