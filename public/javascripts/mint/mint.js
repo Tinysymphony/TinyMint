@@ -37,7 +37,7 @@ $(document).ready(function(){
                 }
             },
             error: function(jqXHR, textStatus, errorThrown){
-                var info = 'error ' + textStatus + " " + errorThrown;
+                var info = textStatus + " " + errorThrown;
                 $("#tmpE").remove();
                 $("#loginForm").before("<div id='tmpE'>" + info + "</div>");
             }
@@ -70,7 +70,7 @@ $(document).ready(function(){
                 }
             },
             error: function(jqXHR, textStatus, errorThrown){
-                var info = 'error ' + textStatus + " " + errorThrown;
+                var info = textStatus + " " + errorThrown;
                 $("#tmpE").remove();
                 $("#signupForm").before("<div id='tmpE'>" + info + "</div>");
             }

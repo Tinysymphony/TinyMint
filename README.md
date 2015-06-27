@@ -15,4 +15,6 @@ It's inspired by MS Sway and the initial UI of TinyMint is similar to Sway, yet 
 
 -----
 
-#### 6.6 Dashboard Frontend version 1
+##### 6.6 Dashboard Frontend version 1
+
+##### 6.25 Editor Board version 1.0

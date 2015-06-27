@@ -1,31 +1,16 @@
-
-#result {
-    /*float: left;*/
-    position: absolute;
-    width: 60%;
-    height: 100%;
-    top: 50px;
-    right: 0;
-    /*background-color: #fde8af;*/
-    z-index: 3;
-    overflow: hidden;
+@font-face {
+    font-family: 'raleway';
+    src: url('../fonts/raleway-medium-webfont.eot');
+    src: url('../fonts/raleway-medium-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/raleway-medium-webfont.woff2') format('woff2'),
+    url('../fonts/raleway-medium-webfont.woff') format('woff'),
+    url('../fonts/raleway-medium-webfont.ttf') format('truetype'),
+    url('../fonts/raleway-medium-webfont.svg#ralewaymedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
 }
 
-
-
-
-#resultBoard {
-    /*position: relative;*/
-    font-family: 'raleway' !important;
-    overflow: auto ;
-    z-index: 4;
-    height: 100%;
-}
-
-#colorBoard {
-    /*height: 20%;*/
-}
 
 .MintShow {
     transition: 0.5s;
@@ -44,6 +29,13 @@
 .MintArticle .jumbotron{
     margin-top: 30px;
     border: 2px solid #6495ED;
+}
+
+.MintArticle pre {
+    border: none;
+    font-size: 1.5em;
+    background: transparent;
+    font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif; !important;
 }
 
 .MintArticle p {
