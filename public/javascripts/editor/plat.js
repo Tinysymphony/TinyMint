@@ -17,6 +17,13 @@ $(document).ready(function(){
             var getData = $.parseJSON(data);
             //document.getElementById('resultBoard').innerHTML = getData.html;
             $("#resultBoard").html(getData.html);
+            $("#segmentHolder").html(getData.segments);
+            if(getData.values){
+                var values = $("#segmentBoard").find(".store");
+                for(var i=0; i<values.length; i++){
+                    values.eq(i).val((getData.values)[i]);
+                }
+            }
         },
         error: function(jqXHR, textStatus, errorThrown){
             $("#modal-text").text("This mint is empty.");
@@ -117,6 +124,39 @@ $(document).ready(function(){
 
     $("#refresh").click(function(){
         loadMint();
+    });
+
+    $("#TinyMint").click(function(){
+        $("#warning-content").text("Do you prefer to save current work before return to dashboard?");
+        $("#warning").modal({
+            show: true,
+            backdrop: true
+        });
+    });
+
+    $("#yes").click(function () {
+        savePage();
+        window.location="/";
+    });
+
+    $("#nope").click(function () {
+        window.location="/";
+    });
+
+    $(".about").click(function(){
+        $("#modal-text").text("TinyMint Ver 1.2 ——WyTiny");
+        $("#notice").modal({
+            show: true,
+            backdrop: true
+        });
+    });
+
+    $(".contact").click(function(){
+        $("#modal-text").text("zjutiny@gmail.com / QQ:450803481");
+        $("#notice").modal({
+            show: true,
+            backdrop: true
+        });
     });
 
 });
@@ -298,11 +338,19 @@ function savePage(){
     var name = $("#titleText").text();
     var author = $("#author").val();
     var data = $("#resultBoard").html();
+    var segments = $("#segmentHolder").html();
+    var values = $("#segmentBoard").find(".store");
+    var inputs = [];
+    for(var i=0; i<values.length; i++){
+        inputs.push((values).eq(i).val());
+    }
     var webData = {
         filename: name,
         author: author,
-        sections: data
-    }
+        sections: data,
+        segments: segments,
+        inputs: inputs
+    };
     $.ajax({
         data: webData,
         type: "POST",

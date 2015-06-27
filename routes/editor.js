@@ -4,6 +4,7 @@ var fs = require('fs');
 var path = require('path');
 var ejs = require('ejs');
 var archiver = require('archiver');
+var md5 = require('MD5');
 //var flow = require('nimble');
 
 var router = express.Router();
@@ -38,10 +39,14 @@ router.post('/modules', function (req, res, next) {
 
 router.post('/init', function (req, res, next) {
     var filename = req.body.filename;
-    var sectionFile = pwd + req.session.user.name + "/" + filename + "/" + filename + ".ejs";
-    var source = fs.readFileSync(sectionFile, "utf8");
-    res.json({"html": source});
-    //res.render()
+    var fileDir = pwd + req.session.user.name + "/" + filename + "/";
+    var sectionFile = fileDir + filename + ".ejs";
+    var segmentFile = fileDir + filename + ".seg";
+    var valFile = fileDir + filename + ".val";
+    var sections = fs.readFileSync(sectionFile, "utf8");
+    var segments = fs.readFileSync(segmentFile, "utf8");
+    var values = (fs.readFileSync(valFile, "utf8")).split(md5(filename));
+    res.json({"html": sections, "segments": segments, "values": values});
 });
 
 router.post('/markdown', function (req, res, next) {
@@ -54,9 +59,7 @@ router.post('/markdown', function (req, res, next) {
 router.post('/save', function(req, res, next){
     var data = req.body;
     var userPath = pwd + req.session.user.name + "/";   //username->userfile
-
     saveAll(userPath, data, res);
-
 });
 
 router.post('/download', function(req, res, next){
@@ -86,10 +89,13 @@ function checkLogin(req, res, next) {
 }
 
 function saveAll(userPath, data, res){
+    console.log(data);
     var filename = data.filename;
     var author = data.author;
     var sections = data.sections;
-
+    var segments = data.segments;
+    var inputs = data["inputs[]"];
+    //console.log(inputs);
     fs.mkdir(userPath, function(err){
         if(err) console.log("fs pass user dir");
 
@@ -97,8 +103,10 @@ function saveAll(userPath, data, res){
             if(err) console.log("fs pass sub dir");
 
             var filePath = userPath +  filename;
-            var secFile = filePath + "/" +filename + ".sec.html";
+            var secFile = filePath + "/" +filename + ".ejs";
             var htmlFile = filePath + "/" +filename + ".html";
+            var segFile = filePath + "/" +filename + ".seg";
+            var valFile = filePath + "/" +filename + ".val";
 
             var tmpSlice = __dirname.split('/');
             tmpSlice.pop();
@@ -110,9 +118,14 @@ function saveAll(userPath, data, res){
                 author: author
             });
             var output = headPart + sections + "</body>";
+            var valContent = inputs.join(md5(filename));
+
+            console.log(valContent);
 
             fs.writeFileSync(secFile, sections, "utf8");
+            fs.writeFileSync(segFile, segments, "utf8");
             fs.writeFileSync(htmlFile, output, "utf8");
+            fs.writeFileSync(valFile, valContent, "utf8");
 
             res.json({"info": "Finished!"});
 

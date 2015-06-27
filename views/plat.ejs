@@ -34,8 +34,8 @@
                     TinyWarning
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    <button id="continue" type="button" class="btn btn-primary">Continue</button>
+                    <button id="nope" type="button" class="btn btn-info">Nope</button>
+                    <button id="yes" type="button" class="btn btn-primary">Yes</button>
                 </div>
             </div>
         </div>
@@ -52,13 +52,13 @@
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/">TinyMint</a>
+                    <a class="navbar-brand" id="TinyMint">TinyMint</a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li class="active"><a class="home">Home</a></li>
+                        <li><a class="about">About</a></li>
+                        <li><a class="contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -90,8 +90,8 @@
                                     </div>
                                     <div class="col-md-9">
                                         <!--<h2 id="titleText"><%=mintTitle%><h2>-->
-                                        <input id="author" class="form-control" placeholder="Author">
-                                        <input id="backLink" class="form-control" placeholder="Background Picture Link">
+                                        <input id="author" class="form-control store" placeholder="Author">
+                                        <input id="backLink" class="form-control store" placeholder="Background Picture Link">
                                     </div>
                                 </div>
                             </div>

@@ -246,6 +246,23 @@ body {
 
 #warning {
     color: #1e1a1b;
+    font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#TinyMint {
+    cursor: pointer;
+}
+
+.about {
+    cursor: pointer;
+}
+
+.contact {
+    cursor: pointer;
+}
+
+.home {
+    cursor: pointer;
 }
 
 /*scrollbar*/
