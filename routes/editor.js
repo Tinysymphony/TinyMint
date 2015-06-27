@@ -89,7 +89,7 @@ function checkLogin(req, res, next) {
 }
 
 function saveAll(userPath, data, res){
-    console.log(data);
+    //console.log(data);
     var filename = data.filename;
     var author = data.author;
     var sections = data.sections;
@@ -120,8 +120,7 @@ function saveAll(userPath, data, res){
             var output = headPart + sections + "</body>";
             var valContent = inputs.join(md5(filename));
 
-            console.log(valContent);
-
+            //console.log(valContent);
             fs.writeFileSync(secFile, sections, "utf8");
             fs.writeFileSync(segFile, segments, "utf8");
             fs.writeFileSync(htmlFile, output, "utf8");
@@ -153,7 +152,7 @@ function downloadArchive(filePath, filename, res) {
         setTimeout(function(){
             var zipPath = filePath + "/" + filename +".zip";
             var fileSize = fs.readFileSync(zipPath).length;
-            console.log(fileSize);
+            //console.log(fileSize);
             res.writeHead(200, {
                 'Content-Disposition': 'attachment; filename=' + filename + ".zip",
                 'Content-Length': fileSize,

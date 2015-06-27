@@ -1,8 +1,13 @@
 var express = require('express');
 var User = require('../lib/user');
+var fs = require('fs');
 var router = express.Router();
 
 /* GET home page. */
+
+var pwdSlice = __dirname.split('/');
+pwdSlice.pop();
+var pwd = pwdSlice.join('/') + "/UserSpace/"
 
 router.get('/', checkLogin);
 router.get('/', function (req, res, next) {
@@ -40,11 +45,15 @@ router.post('/', function (req, res, next) {
         console.log(data.username);
         if (!data.username) {
             res.json({"info": "Please create a user name"});
+        }else if((data.username).length<3){
+            res.json({"info": "Username is at least 3 characters"});
         } else if (!data.email) {
             res.json({"info": "Please input email address"});
         } else if (!data.password) {
             res.json({"info": "Please create a password"});
-        } else if (data.password != data.repassword) {
+        } else if((data.password).length<6){
+            res.json({"info": "Password is at least 6 characters"});
+        }else if (data.password != data.repassword) {
             res.json({"info": "The passwords aren't same"});
         } else {
             User.getByName(data.username, function (err, user) {
@@ -63,15 +72,20 @@ router.post('/', function (req, res, next) {
                         if (err) {
                             res.json({"info": err});
                         }
-                        req.session.user = createUser;
-                        console.log("New user " + createUser.name + " joined");
-                        res.json({"info": "Sign up success", "link": "/dashboard"});
+                        fs.mkdir(pwd + createUser.name, function(err){
+                            if(err){
+                                res.json({"info": "Failed to created user directory."});
+                                return;
+                            }
+                            req.session.user = createUser;
+                            console.log("New user " + createUser.name + " joined");
+                            res.json({"info": "Sign up success", "link": "/dashboard"});
+                        });
                     })
                 }
             });
         }
     }
-
 });
 
 function checkLogin(req, res, next) {

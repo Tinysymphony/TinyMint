@@ -97,13 +97,13 @@ $(document).ready(function() {
 
     $("#submitInfo").click(function(){
         var accountInfo = {
-            nickname: $().val(),
-            mobilePhone: $().val(),
-            email: $().val(),
-            blog: $().val(),
-            gender: $().val,
-            age: $().val,
-            interestTags: $().val()
+            nickname: $("#nickname").val(),
+            tel: $("#tel").val(),
+            email: $("#email").val(),
+            blog: $("#blog").val(),
+            gender: $("#gender").val(),
+            age: $("#age").val(),
+            tags: $("#tags").val()
         };
         $.ajax({
             data: accountInfo,
@@ -113,13 +113,24 @@ $(document).ready(function() {
             dataType: 'text',
             cache: false,
             timeout: 5000,
-            success: function(data){
+            success: function(data) {
                 var getData = $.parseJSON(data);
-                //$("#")
+                if (getData.success) {
+                    $("#modal-text").text(getData.success);
+                } else if(getData.error) {
+                    $("#modal-text").text(getData.error);
+                }
+                $("#notice").modal({
+                    show: true,
+                    backdrop: true
+                });
             },
             error: function(jqXHR, textStatus, errorThrown){
-                var info = 'error ' + textStatus + " " + errorThrown;
-                alert(info);
+                $("#modal-text").text("Updata Failed");
+                $("#notice").modal({
+                    show: true,
+                    backdrop: true
+                });
             }
         });
     });
