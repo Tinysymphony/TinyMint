@@ -3,6 +3,30 @@ var segCount = 1;
 
 $(document).ready(function(){
 
+    var mintName = $("#titleText").text();
+    var sendData = {"filename": mintName};
+    $.ajax({
+        data: sendData,
+        type: "POST",
+        url: "/editor/init",
+        cache: false,
+        async: false,
+        dataType: "text",
+        timeout: 5000,
+        success: function(data){
+            var getData = $.parseJSON(data);
+            //document.getElementById('resultBoard').innerHTML = getData.html;
+            $("#resultBoard").html(getData.html);
+        },
+        error: function(jqXHR, textStatus, errorThrown){
+            $("#modal-text").text("This mint is empty.");
+            $("#notice").modal({
+                show: true,
+                backdrop: true
+            });
+        }
+    });
+
     var isFold = false;
 
     $("#right").click(function(){
@@ -53,7 +77,11 @@ $(document).ready(function(){
 
     $("#music").click(function(){
         if($(".Seg-Music").length >= 2){
-            alert("music is unique!");
+            $("#modal-text").text("Music Module is unique.");
+            $("#notice").modal({
+                show: true,
+                backdrop: true
+            });
             return;
         }
         appendSegment($("#h-music").html());
@@ -78,7 +106,7 @@ $(document).ready(function(){
         savePage();
     });
 
-    $("#download").click(function () {
+    $("#download").click(function() {
         savePage();
         downloadArchive();
     });
@@ -157,7 +185,7 @@ function loadMint(){
 
         if(segment.hasClass("DefaultTitle")){
 
-            var title = segment.find("#titleText").val();
+            var title = segment.find("#titleText").text();
             var segData = {"title": title};
             newSegment.load("editor/modules #header", segData);
 
@@ -267,7 +295,7 @@ $(window).resize(function(){
 });
 
 function savePage(){
-    var name = $("#titleText").val();
+    var name = $("#titleText").text();
     var author = $("#author").val();
     var data = $("#resultBoard").html();
     var webData = {
@@ -293,8 +321,7 @@ function savePage(){
 }
 
 function downloadArchive(){
-    var name = $("#titleText").val();
-    //alert(name);
+    var name = $("#titleText").text();
     var form=$("<form>");
     form.attr("style","display:none");
     form.attr("target","");

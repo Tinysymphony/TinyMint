@@ -11,17 +11,43 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/dashboard/dash.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="/stylesheets/mint/mint.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/flat-ui.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/mint/title.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/mint/mint.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/inputB.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/dashboard/demo.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/dashboard/component.css" />
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
     <script type="text/javascript" src="/javascripts/jquery-2.1.4.js"></script>
     <script type="text/javascript" src="/javascripts/modernizr.custom.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="/javascripts/dashboard/dash.js"></script>
 </head>
 <body>
+<div id="warning" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Warning</h4>
+            </div>
+            <div id="warning-content" class="modal-body">
+                TinyWarning
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button id="continue" type="button" class="btn btn-primary">Continue</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="notice" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-md">
+        <div id="modal-content" class="modal-content">
+            <p id="modal-text">TinyInfo</p>
+        </div>
+    </div>
+</div>
 <div class="WebContainer">
     <div id="titleLine">
         <div id="head">
@@ -33,7 +59,7 @@
     <div id="mainBoard">
         <div id="userMenu">
             <img id="userPic" class="img-circle" src="http://avos-bucket.catchkaka.com/1774699440894782headimg552628kq.jpeg@100w_100h.jpg" alt="TinyPic"  />
-            <div id="userName">WyTiny</div>
+            <div id="userName"><%=username%></div>
             <div id="userTinyBar"></div>
             <div id="menuList">
                 <div class="ListItem SelectedItem" id="mints">Mints</div>
@@ -48,6 +74,7 @@
                     <p>Mint : That's what we'd like to call a work designed through TinyMint as.</p>
                 </div>
             </div>
+
             <div class="row tinyrow">
                 <div class="BoardMessage col-lg-12">
                     <h1>Three templates are provided for you, have fun.</h1>
@@ -83,15 +110,41 @@
                 </section>
             </div>
             <hr class="featurette-divider" />
+
             <div class="row tinyrow">
                 <div class="BoardMessage col-lg-12">
                     <h1>Start Design</h1>
                 </div>
-                <section class="grid">
-                    <div class="product DesignWork" id="AddButton">
-                        <img id="AddIcon" class="product__image" src="/images/mints-pic/plus.png" alt="Plus" />
-                    </div>
+
+                <div class="container CreateMint">
+                    <form class="form-inline" onsubmit="return false;">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon">New Mint : </div>
+                                <input id="titleInput" type="text" class="form-control" placeholder="Input Title">
+                                <div class="input-group-addon"></div>
+                            </div>
+                        </div>
+                        <button id="create" class="btn btn-primary">Create</button>
+                    </form>
+                </div>
+
+                <section id="mintList" class="grid">
+                    <% mints.forEach(function(mint){%>
+                        <div class="product DesignWork" id="<%=mint%>">
+                            <div class="product__info">
+                                <img class="product__image" src="/images/mint-default.png" alt="TinyMint" />
+                                <h3 class="product__title"><%=mint%></h3>
+                                <button class="action action--button action--buy EditMint"><span class="action__text">Edit</span></button>
+                                <button class="action action--button action--buy DownloadMint"><span class="action__text">Download</span></button>
+                                <button class="action action--button action--buy ShareMint"><span class="action__text">Share</span></button>
+                                <button class="action action--button action--buy DeleteMint"><span class="action__text">Delete</span></button>
+                            </div>
+                        </div>
+                    <%}) %>
                 </section>
+                <hr class="featurette-divider" />
+
             </div>
         </div>
         <div id="userInfoBoard" class="Board">
@@ -250,5 +303,6 @@
         }
     })();
 </script>
+
 </body>
 </html>

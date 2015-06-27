@@ -15,12 +15,33 @@ var pwd = pwdSlice.join('/') + "/UserSpace/"
 /* GET users listing. */
 
 router.get('/', checkLogin);
+
 router.get('/', function (req, res, next) {
-    res.render('plat', {title: 'TinyMint | Web Designer'});
+    var title = req.query.title;
+    var pathCheck = pwd + req.session.user.name + "/" + title;
+    fs.exists(pathCheck, function(exists){
+        if(exists){
+            //fs.read
+            res.render('plat', {
+                mintTitle: title,
+                title: 'TinyMint | Web Design1er'
+            });
+        } else {
+            res.redirect('Error404');
+        }
+    });
 });
 
 router.post('/modules', function (req, res, next) {
     res.render('mintModules', {Data: req.body});
+});
+
+router.post('/init', function (req, res, next) {
+    var filename = req.body.filename;
+    var sectionFile = pwd + req.session.user.name + "/" + filename + "/" + filename + ".ejs";
+    var source = fs.readFileSync(sectionFile, "utf8");
+    res.json({"html": source});
+    //res.render()
 });
 
 router.post('/markdown', function (req, res, next) {
@@ -40,7 +61,6 @@ router.post('/save', function(req, res, next){
 
 router.post('/download', function(req, res, next){
     var userPath = pwd + req.session.user.name + "/";
-    //var userPath = pwd + "try/";
     var filename = req.body.title;
     var filePath = userPath +filename;
 
@@ -49,7 +69,12 @@ router.post('/download', function(req, res, next){
 });
 
 router.post('/', function(req, res, next){
-    res.json({"link": "/editor"});
+    var title = req.body.title;
+    res.render('plat', {
+        mintTitle: title,
+        title: 'TinyMint | Web Designer'
+    });
+    //res.json({"link": "/editor"});
 });
 
 function checkLogin(req, res, next) {

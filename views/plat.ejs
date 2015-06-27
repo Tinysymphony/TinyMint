@@ -22,6 +22,32 @@
     <script type="text/javascript" src="/javascripts/modernizr.custom.js"></script>
 </head>
 <body>
+
+    <div id="warning" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Warning</h4>
+                </div>
+                <div id="warning-content" class="modal-body">
+                    TinyWarning
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button id="continue" type="button" class="btn btn-primary">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="notice" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-md">
+            <div id="modal-content" class="modal-content">
+                <p id="modal-text">TinyInfo</p>
+            </div>
+        </div>
+    </div>
+
     <div class="root">
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
@@ -56,15 +82,16 @@
                     <div ID="segmentHolder">
                         <div id="seg1" class="DefaultTitle Segment row">
                             <div class="col-md-12">
-                                <div class="fa fa-home t-seg"> <span>Title</span></div>
+                                <div class="fa fa-home t-seg"> <span id="titleText"><%=mintTitle%></span></div>
                                 <hr class='featurette-divider' />
                                 <div class="row">
                                     <div class="col-md-3 Pic">
                                         <img id="addIcon" class="img-circle" src="/images/mints-pic/plus.png" alt="Plus" />
                                     </div>
                                     <div class="col-md-9">
-                                        <input id="titleText" class="form-control" placeholder="Title Text">
+                                        <!--<h2 id="titleText"><%=mintTitle%><h2>-->
                                         <input id="author" class="form-control" placeholder="Author">
+                                        <input id="backLink" class="form-control" placeholder="Background Picture Link">
                                     </div>
                                 </div>
                             </div>

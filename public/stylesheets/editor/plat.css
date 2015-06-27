@@ -233,6 +233,20 @@ body {
     font-family: "Lato", Helvetica, Arial, sans-serif;
 }
 
+#modal-content {
+    padding: 30px;
+    text-align: center;
+}
+
+#modal-text {
+    font-size: 2em;
+    font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #F98262;
+}
+
+#warning {
+    color: #1e1a1b;
+}
 
 /*scrollbar*/
 ::-webkit-scrollbar {

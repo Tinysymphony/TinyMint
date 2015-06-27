@@ -141,6 +141,7 @@ p {
 
 .BoardMessage {
     text-align: center;
+    color: #338ec4;
 }
 
 .DesignWork {
@@ -161,4 +162,28 @@ p {
 
 #AddIcon {
     cursor: pointer;
+}
+
+.CreateMint {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.CreateForm {
+    display: inline-table;!important;
+}
+
+#modal-content {
+    padding: 30px;
+    text-align: center;
+}
+
+#modal-text {
+    font-size: 2em;
+    color: #F98262;
+}
+
+#warning {
+    color: #1e1a1b;
 }
