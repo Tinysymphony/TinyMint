@@ -194,18 +194,6 @@ body {
 .PictureLink {
 }
 
-/*.Pic {*/
-    /*position: absolute;*/
-    /*float: left;*/
-    /*height: 100% !important;*/
-    /*width: 24%;*/
-    /*left: 0px;*/
-    /*cursor: pointer;*/
-    /*background-color: #eee;*/
-    /*z-index: 56;*/
-/*}*/
-
-
 #addIcon {
     width: 100%!important;
     cursor: pointer;
@@ -263,6 +251,10 @@ body {
 
 .home {
     cursor: pointer;
+}
+
+#flag {
+    display: none;!important;
 }
 
 /*scrollbar*/

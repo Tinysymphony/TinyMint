@@ -18,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/dashboard/demo.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/dashboard/component.css" />
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
-    <script type="text/javascript" src="/javascripts/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="/javascripts/modernizr.custom.js"></script>
     <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="/javascripts/dashboard/dash.js"></script>
@@ -58,7 +58,7 @@
     </div>
     <div id="mainBoard">
         <div id="userMenu">
-            <img id="userPic" class="img-circle" src="http://avos-bucket.catchkaka.com/1774699440894782headimg552628kq.jpeg@100w_100h.jpg" alt="TinyPic"  />
+            <img id="userPic" class="img-circle" src="images/tiny.jpg" alt="TinyPic"  />
             <div id="userName"><%=username%></div>
             <div id="userTinyBar"></div>
             <div id="menuList">
@@ -77,34 +77,34 @@
 
             <div class="row tinyrow">
                 <div class="BoardMessage col-lg-12">
-                    <h1>Three templates are provided for you, have fun.</h1>
+                    <h1>Three templates are provided as tutorial, have fun.</h1>
                 </div>
                 <section class="grid">
-                    <div class="product">
+                    <div class="product" id="photography">
                         <div class="product__info">
                             <img class="product__image" src="/images/mints-pic/camera.png" alt="TinyMint" />
                             <h3 class="product__title">Photography</h3>
-                            <button class="action action--button action--buy"><span class="action__text">Edit</span></button>
-                            <button class="action action--button action--buy"><span class="action__text">Download</span></button>
-                            <button class="action action--button action--buy"><span class="action__text">Share</span></button>
+                            <button class="action action--button action--buy EditTutorial"><span class="action__text">Edit</span></button>
+                            <button class="action action--button action--buy DownloadTutorial"><span class="action__text">Download</span></button>
+                            <button class="action action--button action--buy share"><span class="action__text">Share</span></button>
                         </div>
                     </div>
-                    <div class="product">
+                    <div class="product" id="blog">
                         <div class="product__info">
                             <img class="product__image" src="/images/mints-pic/news.png" alt="TinyMint" />
-                            <h3 class="product__title">Blogs</h3>
-                            <button class="action action--button action--buy"><span class="action__text">Edit</span></button>
-                            <button class="action action--button action--buy"><span class="action__text">Download</span></button>
-                            <button class="action action--button action--buy"><span class="action__text">Share</span></button>
+                            <h3 class="product__title">Blog</h3>
+                            <button class="action action--button action--buy EditTutorial"><span class="action__text">Edit</span></button>
+                            <button class="action action--button action--buy DownloadTutorial"><span class="action__text">Download</span></button>
+                            <button class="action action--button action--buy share"><span class="action__text">Share</span></button>
                         </div>
                     </div>
-                    <div class="product">
+                    <div class="product" id="freedom">
                         <div class="product__info">
                             <img class="product__image" src="/images/mints-pic/air.png" alt="TinyMint" />
                             <h3 class="product__title">Freedom</h3>
-                            <button class="action action--button action--buy"><span class="action__text">Edit</span></button>
-                            <button class="action action--button action--buy"><span class="action__text">Download</span></button>
-                            <button class="action action--button action--buy"><span class="action__text">Share</span></button>
+                            <button class="action action--button action--buy EditTutorial"><span class="action__text">Edit</span></button>
+                            <button class="action action--button action--buy DownloadTutorial"><span class="action__text">Download</span></button>
+                            <button class="action action--button action--buy share"><span class="action__text">Share</span></button>
                         </div>
                     </div>
                 </section>
@@ -137,7 +137,7 @@
                                 <h3 class="product__title"><%=mint%></h3>
                                 <button class="action action--button action--buy EditMint"><span class="action__text">Edit</span></button>
                                 <button class="action action--button action--buy DownloadMint"><span class="action__text">Download</span></button>
-                                <button class="action action--button action--buy ShareMint"><span class="action__text">Share</span></button>
+                                <button class="action action--button action--buy ShareMint share"><span class="action__text">Share</span></button>
                                 <button class="action action--button action--buy DeleteMint"><span class="action__text">Delete</span></button>
                             </div>
                         </div>

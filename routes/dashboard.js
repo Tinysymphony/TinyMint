@@ -14,57 +14,58 @@ router.get('/', function(req, res, next){
     var db = monk('localhost/userInfo');
     fs.mkdir(userPath, function(err){
         if(err) console.log("Router.get : user dir exists, pass");
-    });
-    fs.readdir(userPath, function(err, files){
-        if(err) {
-            console.log("ReadDir Error : " + err);
-            res.redirect('Error500');
-            return;
-        }
-        var table = db.get('info');
 
-        table.find({name: req.session.user.name}, function(err, doc){
-            if(err){
-                db.close();
-                console.log("Database error: read user info failed.");
+        fs.readdir(userPath, function(err, files){
+            if(err) {
+                console.log("ReadDir Error : " + err);
                 res.redirect('Error500');
                 return;
             }
-            if(doc.length){
-                db.close();
-                console.log(doc[0]);
-                res.render('dashboard', {
-                    username: req.session.user.name,
-                    mints: files,
-                    title: "TinyMint | " + req.session.user.name + " Dashboard",
-                    infos: doc[0]
-                });
-            } else { //login for the first time
-                table.insert({
-                    name: req.session.user.name,
-                    nickname: '',
-                    tel: '',
-                    email: '',
-                    blog: '',
-                    gender: '',
-                    age: '',
-                    tags: ''
-                }, function(err, newInfo){
-                    if(err) {
-                        db.close();
-                        console.log("Database error: insert new user info failed.");
-                        res.redirect('Error500');
-                        return;
-                    }
+            var table = db.get('info');
+
+            table.find({name: req.session.user.name}, function(err, doc){
+                if(err){
                     db.close();
+                    console.log("Database error: read user info failed.");
+                    res.redirect('Error500');
+                    return;
+                }
+                if(doc.length){
+                    db.close();
+                    //console.log(doc[0]);
                     res.render('dashboard', {
                         username: req.session.user.name,
                         mints: files,
                         title: "TinyMint | " + req.session.user.name + " Dashboard",
-                        infos: newInfo
+                        infos: doc[0]
                     });
-                });
-            }
+                } else { //login for the first time
+                    table.insert({
+                        name: req.session.user.name,
+                        nickname: '',
+                        tel: '',
+                        email: '',
+                        blog: '',
+                        gender: '',
+                        age: '',
+                        tags: ''
+                    }, function(err, newInfo){
+                        if(err) {
+                            db.close();
+                            console.log("Database error: insert new user info failed.");
+                            res.redirect('Error500');
+                            return;
+                        }
+                        db.close();
+                        res.render('dashboard', {
+                            username: req.session.user.name,
+                            mints: files,
+                            title: "TinyMint | " + req.session.user.name + " Dashboard",
+                            infos: newInfo
+                        });
+                    });
+                }
+            });
         });
     });
 });
@@ -107,7 +108,7 @@ router.post('/delete', function(req, res, next){
 
 router.post('/infos', function(req, res, next){
     var db = monk('localhost/userInfo');
-    console.log(req.body);
+    //console.log(req.body);
     var inputInfo = req.body;
     var table = db.get('info');
     table.find({name: req.session.user.name}, function(err, doc){
@@ -116,8 +117,8 @@ router.post('/infos', function(req, res, next){
             res.json({"error": "Database Error"});
             return;
         }
-        console.log(doc[0]);
-        console.log(doc[0]._id);
+        //console.log(doc[0]);
+        //console.log(doc[0]._id);
         if(doc.length){
             table.update({_id: doc[0]._id},{
                 name: req.session.user.name,

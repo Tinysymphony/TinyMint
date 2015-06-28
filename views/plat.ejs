@@ -17,12 +17,12 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/flat-ui.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/editor/demo.css" />
     <!--<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>-->
-    <script type="text/javascript" src="/javascripts/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="/javascripts/editor/plat.js"></script>
     <script type="text/javascript" src="/javascripts/modernizr.custom.js"></script>
 </head>
 <body>
-
+    <div id="flag"><%=flag%></div>
     <div id="warning" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -154,6 +154,7 @@
                     <h3 class="InfoText">Interactive Color Board</h3>
                     <p class="InfoText"><img src="/images/drag.svg" alt="drag icon"/>Drag color from the left toolbar to an area or text in the Segments. A blue outline will indicate a droppable element.</p>
                     <p class="InfoText"><img src="/images/time.svg" alt="drag icon"/>On mobile, wait a tiny bit until you drag the color drop.</p>
+                    <p class="InfoText"><b>Attention : Please complete the content and structure of your mint before drag color because of the incompleteness of algorithm, it will be improved later.</b></p>
                     <button class="info-close">Got it!</button>
                 </div>
             </div>

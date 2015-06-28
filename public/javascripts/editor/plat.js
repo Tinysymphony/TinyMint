@@ -5,10 +5,17 @@ $(document).ready(function(){
 
     var mintName = $("#titleText").text();
     var sendData = {"filename": mintName};
+    var ajaxUrl;
+    var editorType = $("#flag").text();
+    if(editorType=="readonly"){
+        ajaxUrl = "/editor/readonlyInit"
+    }else{
+        ajaxUrl = "/editor/init";
+    }
     $.ajax({
         data: sendData,
         type: "POST",
-        url: "/editor/init",
+        url: ajaxUrl,
         cache: false,
         async: false,
         dataType: "text",
@@ -110,12 +117,31 @@ $(document).ready(function(){
     });
 
     $("#cloudSave").click(function(){
-        savePage();
+        if(editorType != "readonly"){
+            savePage();
+        } else {
+            $("#modal-text").text("Cannot Save Readonly Mint");
+            $("#notice").modal({
+                show: true,
+                backdrop: true
+            });
+        }
     });
 
+
     $("#download").click(function() {
-        savePage();
-        downloadArchive();
+        if(editorType != "readonly")
+        {
+            savePage();
+            downloadArchive(editorType);
+        } else {
+            $("#modal-text").text("ReadOnly Mode Cannot Get Saved Mint");
+            $("#notice").modal({
+                show: true,
+                backdrop: true
+            });
+            downloadArchive(editorType);
+        }
     });
 
     $("#dl-menu").css("left", $("#add").offset().left);
@@ -127,11 +153,16 @@ $(document).ready(function(){
     });
 
     $("#TinyMint").click(function(){
-        $("#warning-content").text("Do you prefer to save current work before return to dashboard?");
-        $("#warning").modal({
-            show: true,
-            backdrop: true
-        });
+        if(editorType!="readonly"){
+            $("#warning-content").text("Do you prefer to save current work before return to dashboard?");
+            $("#warning").modal({
+                show: true,
+                backdrop: true
+            });
+        }else{
+            window.location="/";
+        }
+
     });
 
     $("#yes").click(function () {
@@ -306,6 +337,10 @@ function loadMint(){
 
         }else if(segment.hasClass("Seg-Music")){
 
+            var musicLink = segment.find("#music-link").val();
+            var segData= {"musicLink": musicLink};
+            newSegment.load("editor/modules #music", segData);
+
         }else if(segment.hasClass("Seg-Video")){
 
             var videoLinkInput =  segment.find("#video-link").val().split(" ");
@@ -368,7 +403,7 @@ function savePage(){
     });
 }
 
-function downloadArchive(){
+function downloadArchive(editorType){
     var name = $("#titleText").text();
     var form=$("<form>");
     form.attr("style","display:none");
@@ -379,8 +414,12 @@ function downloadArchive(){
     inputTitle.attr("type","hidden");
     inputTitle.attr("name","title");
     inputTitle.attr("value",name);
+    var inputType=$("<input>");
+    inputType.attr("type","hidden");
+    inputType.attr("name","type");
+    inputType.attr("value",editorType);
     $("body").append(form);
     form.append(inputTitle);
+    form.append(inputType);
     form.submit();
-
 }

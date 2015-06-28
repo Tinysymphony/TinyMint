@@ -26,6 +26,16 @@ $(document).ready(function() {
         });
     });
 
+    $(".EditTutorial").click(function(){
+        var title = $(this).parent().parent().attr("id");
+        window.location = "/editor/tutorial?title=" + title;
+    });
+
+    $(".DownloadTutorial").click(function(){
+        var title = $(this).parent().parent().attr("id");
+        downloadArchive(title, "readonly");
+    });
+
     $(".ListItem").click(function(){
         $(".ListItem").removeClass("SelectedItem");
         $(this).addClass("SelectedItem");
@@ -186,21 +196,38 @@ function boundButton() {
         });
     });
 
+    $(".share").click(function(){
+        $("#modal-text").text("Sorry, Share function has not completed.");
+        $("#notice").modal({
+            show: true,
+            backdrop: true
+        });
+    });
+
     $(".DownloadMint").click(function(){
         var name = $(this).parent().parent().attr("id");
-        var form=$("<form>");
-        form.attr("style","display:none");
-        form.attr("target","");
-        form.attr("method","post");
-        form.attr("action","/editor/download");
-        var inputTitle=$("<input>");
-        inputTitle.attr("type","hidden");
-        inputTitle.attr("name","title");
-        inputTitle.attr("value",name);
-        $("body").append(form);
-        form.append(inputTitle);
-        form.submit();
+        downloadArchive(name, "editable");
     });
+}
+
+function downloadArchive(name, editorType){
+    var form=$("<form>");
+    form.attr("style","display:none");
+    form.attr("target","");
+    form.attr("method","post");
+    form.attr("action","/editor/download");
+    var inputTitle=$("<input>");
+    inputTitle.attr("type","hidden");
+    inputTitle.attr("name","title");
+    inputTitle.attr("value",name);
+    var inputType=$("<input>");
+    inputType.attr("type","hidden");
+    inputType.attr("name","type");
+    inputType.attr("value",editorType);
+    $("body").append(form);
+    form.append(inputTitle);
+    form.append(inputType);
+    form.submit();
 }
 
 function reSizeMenuItem(){

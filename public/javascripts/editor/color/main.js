@@ -45,7 +45,7 @@
 	}
 
 	function init() {
-		document.querySelector('button.info-close').addEventListener('click', function() {
+		document.querySelector('div.info').addEventListener('click', function() {
 			var info = document.querySelector('.info-wrap');
 			info.parentNode.removeChild(info);
 		});

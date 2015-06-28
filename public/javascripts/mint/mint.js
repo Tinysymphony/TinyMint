@@ -11,7 +11,6 @@ $(document).ready(function(){
 		$("#signin").animate({top:"-100%"},500);
     });
 
-	//$("#aboutContent").load("./text/about/.txt");
     $("#loginButton").click(function(){
         var loginfo = {
             login: 1,

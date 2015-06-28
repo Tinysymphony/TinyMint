@@ -11,7 +11,8 @@ var router = express.Router();
 
 var pwdSlice = __dirname.split('/');
 pwdSlice.pop();
-var pwd = pwdSlice.join('/') + "/UserSpace/"
+var rootPath = pwdSlice.join('/');
+var pwd = rootPath + "/UserSpace/"
 
 /* GET users listing. */
 
@@ -25,7 +26,25 @@ router.get('/', function (req, res, next) {
             //fs.read
             res.render('plat', {
                 mintTitle: title,
-                title: 'TinyMint | Web Design1er'
+                title: 'TinyMint | Web Designer',
+                flag: "editable"
+            });
+        } else {
+            res.redirect('Error404');
+        }
+    });
+});
+
+router.get('/tutorial', function(req, res, next){
+    var title = req.query.title;
+    var tutorialPath = rootPath + "/tutorial/" + title;
+    fs.exists(tutorialPath, function(exists){
+        if(exists){
+            //fs.read
+            res.render('plat', {
+                mintTitle: title,
+                title: 'TinyMint | Web Designer',
+                flag: "readonly"
             });
         } else {
             res.redirect('Error404');
@@ -49,6 +68,18 @@ router.post('/init', function (req, res, next) {
     res.json({"html": sections, "segments": segments, "values": values});
 });
 
+router.post('/readonlyInit', function (req, res, next) {
+    var filename = req.body.filename;
+    var fileDir = rootPath + "/tutorial/" + filename + "/";
+    var sectionFile = fileDir + filename + ".ejs";
+    var segmentFile = fileDir + filename + ".seg";
+    var valFile = fileDir + filename + ".val";
+    var sections = fs.readFileSync(sectionFile, "utf8");
+    var segments = fs.readFileSync(segmentFile, "utf8");
+    var values = (fs.readFileSync(valFile, "utf8")).split(md5(filename));
+    res.json({"html": sections, "segments": segments, "values": values});
+});
+
 router.post('/markdown', function (req, res, next) {
     var html = md.makeHtml(req.body.markdown);
     var sendHtml = "<div class='container'><div class='row MintMarkHtml'>" + html +"</div></div>";
@@ -63,12 +94,15 @@ router.post('/save', function(req, res, next){
 });
 
 router.post('/download', function(req, res, next){
-    var userPath = pwd + req.session.user.name + "/";
     var filename = req.body.title;
-    var filePath = userPath +filename;
-
-    downloadArchive(filePath, filename, res);
-
+    var userPath = pwd + req.session.user.name + "/" + filename;
+    var tutorialPath = rootPath + "/tutorial/" + filename;
+    var type = req.body.type;
+    if(type != "readonly"){
+        downloadArchive(userPath, filename, res);
+    } else {
+        downloadArchive(tutorialPath, filename, res);
+    }
 });
 
 router.post('/', function(req, res, next){
@@ -77,7 +111,6 @@ router.post('/', function(req, res, next){
         mintTitle: title,
         title: 'TinyMint | Web Designer'
     });
-    //res.json({"link": "/editor"});
 });
 
 function checkLogin(req, res, next) {
@@ -136,7 +169,7 @@ function downloadArchive(filePath, filename, res) {
 
     var zipPath = filePath + "/" + filename + ".zip";
     var output = fs.createWriteStream(zipPath);
-    var outputHtml = filePath ;//+ filename + ".html";
+    var outputHtml = filePath;
     var archive = archiver.create('zip', {});
 
     archive.on('err', function(err) {
@@ -151,17 +184,23 @@ function downloadArchive(filePath, filename, res) {
     if(archive.finalize()){
         setTimeout(function(){
             var zipPath = filePath + "/" + filename +".zip";
-            var fileSize = fs.readFileSync(zipPath).length;
-            //console.log(fileSize);
-            res.writeHead(200, {
-                'Content-Disposition': 'attachment; filename=' + filename + ".zip",
-                'Content-Length': fileSize,
-                'Content-Type': 'application/octet-stream'
-            });
-            var target = fs.createReadStream(zipPath, {bufferSize: 1024*1024}, function(err){
-                if(err) console.log(err);
-            });
-            target.pipe(res, {end: true});
+            //var fileSize = fs.readFileSync(zipPath).length;
+            fs.readFile(zipPath, function(err, data){
+                if(err){
+                    res.redirect("Error404");
+                    return;
+                }
+                var fileSize = data.length;
+                res.writeHead(200, {
+                    'Content-Disposition': 'attachment; filename=' + filename + ".zip",
+                    'Content-Length': fileSize,
+                    'Content-Type': 'application/octet-stream'
+                });
+                var target = fs.createReadStream(zipPath, {bufferSize: 1024*1024}, function(err){
+                    if(err) console.log(err);
+                });
+                target.pipe(res, {end: true});
+            })
         }, 500);
     }
 }
