@@ -177,9 +177,10 @@ function downloadArchive(filePath, filename, res) {
     });
     archive.pipe(output);
     archive.bulk([
-        { src: ['README.md']},
+        //{ src: ['README.md']},
+        { expand: true, cwd: rootPath, src: ['README.md'], dest: '/'},
         { expand: true, cwd: outputHtml, src: [filename + ".html"], dest: '/'},
-        { expand: true, cwd: 'head_files', src: ['**'], dest: '/include'}
+        { expand: true, cwd: rootPath + '/head_files', src: ['**'], dest: '/include'}
     ]);
     if(archive.finalize()){
         setTimeout(function(){
