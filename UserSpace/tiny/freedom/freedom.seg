@@ -1,0 +1,52 @@
+
+                        <div id="seg1" class="DefaultTitle Segment row" style="border: none;">
+                            <div class="col-md-12">
+                                <div class="fa fa-home t-seg"> <span id="titleText">freedom</span></div>
+                                <hr class="featurette-divider">
+                                <div class="row">
+                                    <div class="col-md-3 Pic">
+                                        <img id="addIcon" class="img-circle" src="/images/mints-pic/plus.png" alt="Plus">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <!--<h2 id="titleText">freedom<h2>-->
+                                        <input id="author" class="form-control store" placeholder="Author">
+                                        <input id="backLink" class="form-control store" placeholder="Background Picture Link">
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="Segment Seg-Headline row" style="border: none;" id="seg2">
+        <div class="col-md-12">
+            <div class="fa fa-quote-left t-seg"> <span>Headline</span></div>
+            <hr class="featurette-divider">
+            <div>
+                <div class="form-group">
+                    <input type="text" id="headline-main-title" placeholder="Main Title" class="form-control store">
+                    <input type="text" id="headline-subtitle" placeholder="Subtitle" class="form-control store">
+                </div>
+            </div>
+        </div>
+    </div><div class="Segment Seg-Article row Selected" style="border: 8px solid rgb(238, 201, 0);" id="seg5">
+        <div class="col-md-12">
+            <div class="fa fa-edit t-seg"> <span>Article</span></div>
+            <hr class="featurette-divider">
+            <div>
+                <div class="form-group">
+                    <input type="text" id="article-title" placeholder="Content" class="form-control store">
+                    <textarea id="article-content" class="form-control LongText store" placeholder="Paste your article here" onpropertychange="resize(this)" oninput="resize(this)" style="height: 82px;"></textarea>
+                </div>
+            </div>
+        </div>
+    </div><div class="Segment Seg-Video row" style="border: none;" id="seg3">
+        <div class="col-md-12">
+            <div class="fa fa-film t-seg"> <span>Video</span></div>
+            <hr class="featurette-divider">
+            <input id="video-link" type="text" placeholder="Video Iframe Code" class="form-control store">
+        </div>
+    </div><div class="Segment Seg-Music row" style="border: none;" id="seg4">
+        <div class="col-md-12">
+            <div class="fa fa-music t-seg"> <span>Music</span></div>
+            <hr class="featurette-divider">
+            <input id="music-link" type="text" placeholder="Music Link" class="form-control store">
+        </div>
+    </div>
+                    

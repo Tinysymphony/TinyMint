@@ -1,0 +1,117 @@
+
+                        <div id="seg1" class="DefaultTitle Segment row" style="border: none;">
+                            <div class="col-md-12">
+                                <div class="fa fa-home t-seg"> <span id="titleText">photography</span></div>
+                                <hr class="featurette-divider">
+                                <div class="row">
+                                    <div class="col-md-3 Pic">
+                                        <img id="addIcon" class="img-circle" src="/images/mints-pic/plus.png" alt="Plus">
+                                    </div>
+                                    <div class="col-md-9">
+                                        <!--<h2 id="titleText">photography<h2>-->
+                                        <input id="author" class="form-control store" placeholder="Author">
+                                        <input id="backLink" class="form-control store" placeholder="Background Picture Link">
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="Segment Seg-Paragraph row" style="border: none;" id="seg2">
+        <div class="col-md-12">
+            <div class="fa fa-pencil t-seg"> <span>Paragraph</span></div>
+            <hr class="featurette-divider">
+            <div>
+                <div class="form-group">
+                    <input type="text" id="paragraph-content" placeholder="Content" class="form-control store">
+                </div>
+            </div>
+        </div>
+    </div><div class="Segment Seg-Single row" style="border: none;" id="seg3">
+        <div class="col-md-12">
+            <div class="fa fa-photo t-seg"> <span>Single</span></div>
+            <hr class="featurette-divider">
+            <div>
+                <div class="form-group PictureLink">
+                    <input id="single-link" type="text" placeholder="Picture url" class="form-control store">
+                    <input type="text" id="single-content" placeholder="Append a paragraph" class="form-control store">
+                </div>
+                <div id="singleType" class="btn-group" data-toggle="buttons">
+                    <label id="s-bottom" class="btn btn-info">
+                        <input type="radio" autocomplete="off" checked=""> Bottom
+                    </label>
+                    <label id="s-top" class="btn btn-info">
+                        <input type="radio" autocomplete="off"> Top
+                    </label>
+                    <label id="s-left" class="btn btn-info">
+                        <input type="radio" autocomplete="off"> Left
+                    </label>
+                    <label id="s-right" class="btn btn-info active">
+                        <input type="radio" autocomplete="off"> Right
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div><div class="Segment Seg-Circles row Selected" style="border: 8px solid rgb(238, 201, 0);" id="seg4">
+        <div class="col-md-12">
+            <div class="fa fa-photo t-seg"> <span>Circles</span></div>
+            <hr class="featurette-divider">
+            <a class="btn btn-default UploadButton">Upload Picture A</a>
+            <div class="form-group PictureLink">
+                <input id="circle-link1" type="text" placeholder="Picture url A" class="form-control store">
+                <div class="row">
+                    <div class="col-md-4">
+                        <input id="circle-title1" type="text" placeholder="Title" class="form-control store">
+                    </div>
+                    <div class="col-md-8">
+                        <input id="circle-content1" type="text" placeholder="Content under picture" class="form-control store">
+                    </div>
+                </div>
+            </div>
+            <a class="btn btn-default UploadButton">Upload Picture B</a>
+            <div class="form-group PictureLink">
+                <input id="circle-link2" type="text" placeholder="Picture url B" class="form-control store">
+                <div class="row">
+                    <div class="col-md-4">
+                        <input id="circle-title2" type="text" placeholder="Title" class="form-control store">
+                    </div>
+                    <div class="col-md-8">
+                        <input id="circle-content2" type="text" placeholder="Content under picture" class="form-control store">
+                    </div>
+                </div>
+            </div>
+            <a class="btn btn-default UploadButton">Upload Picture C</a>
+            <div class="form-group PictureLink">
+                <input id="circle-link3" type="text" placeholder="Picture url C" class="form-control store">
+                <div class="row">
+                    <div class="col-md-4">
+                        <input id="circle-title3" type="text" placeholder="Title" class="form-control store">
+                    </div>
+                    <div class="col-md-8">
+                        <input id="circle-content3" type="text" placeholder="Content under picture" class="form-control store">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><div class="Segment Seg-Gallery row" style="border: none;" id="seg5">
+        <div class="col-md-12 t-seg">
+            <div class="fa fa-photo"> <span>Gallery</span></div>
+            <hr class="featurette-divider">
+            <div>
+                <div class="form-group PictureLink">
+                    <input id="gallery-link1" type="text" placeholder="Picture url A" class="form-control store">
+                    <input id="gallery-link2" type="text" placeholder="Picture url B" class="form-control store">
+                    <input id="gallery-link3" type="text" placeholder="Picture url C" class="form-control store">
+                </div>
+                <a class="btn btn-default UploadButton">Append</a>
+            </div>
+        </div>
+    </div><div class="Segment Seg-Paragraph row" style="border: none;" id="seg6">
+        <div class="col-md-12">
+            <div class="fa fa-pencil t-seg"> <span>Paragraph</span></div>
+            <hr class="featurette-divider">
+            <div>
+                <div class="form-group">
+                    <input type="text" id="paragraph-content" placeholder="Content" class="form-control store">
+                </div>
+            </div>
+        </div>
+    </div>
+                    

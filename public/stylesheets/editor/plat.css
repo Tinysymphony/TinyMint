@@ -109,6 +109,10 @@ body {
     width: 80% !important;
 }
 
+.Segment textarea {
+    resize: none;
+}
+
 .LongText {
     overflow-y: hidden!important;
     height: 40px;
