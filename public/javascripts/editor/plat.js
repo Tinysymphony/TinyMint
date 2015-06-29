@@ -230,11 +230,8 @@ function unfold(){
 function setSelect(){
     $(".Segment").click(function(){
         $(this).addClass("Selected");
-        //$(this).css({"background-color":"#EEC900"});
         $(this).css({"border":"8px solid #EEC900"});
-        $(".Segment").not(this).removeClass("Selected");
-        //$(".Segment").not(this).css({"background-color":"#fff"});
-        $(".Segment").not(this).css({"border":"none"});
+        $(".Segment").not(this).removeClass("Selected").css({"border": "none"});
     });
 }
 
@@ -258,33 +255,33 @@ function loadMint(){
 
             var title = segment.find("#titleText").text();
             var segData = {"title": title};
-            newSegment.load("editor/modules #header", segData);
+            newSegment.load("/editor/modules #header", segData);
 
         }else if(segment.hasClass("Seg-Headline")){
 
             var mainTitle = segment.find("#headline-main-title").val();
             var subTitle = segment.find("#headline-subtitle").val();
             var segData = {"mainTitle": mainTitle, "subTitle": subTitle};
-            newSegment.load("editor/modules #headline", segData);
+            newSegment.load("/editor/modules #headline", segData);
 
         }else if(segment.hasClass("Seg-Paragraph")){
 
             var paraContent= segment.find("#paragraph-content").val();
             var segData = {"paraContent": paraContent};
-            newSegment.load("editor/modules #paragraph", segData);
+            newSegment.load("/editor/modules #paragraph", segData);
 
         }else if(segment.hasClass("Seg-Article")){
 
             var articleContent = segment.find("#article-content").val();
             var articleTitle = segment.find("#article-title").val();
             var segData = {"articleContent": articleContent, "articleTitle": articleTitle};
-            newSegment.load("editor/modules #article", segData);
+            newSegment.load("/editor/modules #article", segData);
 
         }else if(segment.hasClass("Seg-Markdown")){
 
             var markdown = segment.find("#markdown-content").val();
             var segData = {"markdown": markdown};
-            newSegment.load("editor/markdown", segData);
+            newSegment.load("/editor/markdown", segData);
 
         }else if(segment.hasClass("Seg-Single")){
 
@@ -294,13 +291,13 @@ function loadMint(){
 
             var type = segment.find("#singleType").children(".active").attr("id");
             if(type=="s-bottom")
-                newSegment.load("editor/modules #single-bottom", segData);
+                newSegment.load("/editor/modules #single-bottom", segData);
             else if(type=="s-top")
-                newSegment.load("editor/modules #single-top", segData);
+                newSegment.load("/editor/modules #single-top", segData);
             else if(type=="s-left")
-                newSegment.load("editor/modules #single-left", segData);
+                newSegment.load("/editor/modules #single-left", segData);
             else if(type=="s-right")
-                newSegment.load("editor/modules #single-right", segData);
+                newSegment.load("/editor/modules #single-right", segData);
 
         }else if(segment.hasClass("Seg-Circles")){
 
@@ -323,8 +320,8 @@ function loadMint(){
                 "circleContent1": cContent1,
                 "circleContent2": cContent2,
                 "circleContent3": cContent3
-            }
-            newSegment.load("editor/modules #circles", segData);
+            };
+            newSegment.load("/editor/modules #circles", segData);
 
 
         }else if(segment.hasClass("Seg-Gallery")){
@@ -333,13 +330,13 @@ function loadMint(){
             var link2 =  segment.find("#gallery-link2").val();
             var link3 =  segment.find("#gallery-link3").val();
             var segData = {"galleryLink1": link1, "galleryLink2": link2, "galleryLink3": link3};
-            newSegment.load("editor/modules #carousel-example-generic", segData); //TODO change the plugin
+            newSegment.load("/editor/modules #carousel-example-generic", segData); //TODO change the plugin
 
         }else if(segment.hasClass("Seg-Music")){
 
             var musicLink = segment.find("#music-link").val();
             var segData= {"musicLink": musicLink};
-            newSegment.load("editor/modules #music", segData);
+            newSegment.load("/editor/modules #music", segData);
 
         }else if(segment.hasClass("Seg-Video")){
 
@@ -353,7 +350,7 @@ function loadMint(){
                 }
             }
             var segData = {"videoLink": videoLink};
-            newSegment.load("editor/modules #video", segData);
+            newSegment.load("/editor/modules #video", segData);
 
         }
 

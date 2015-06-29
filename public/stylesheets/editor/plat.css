@@ -1,24 +1,15 @@
 
-@font-face {
-    font-family: 'raleway';
-    src: url('./fonts/raleway-medium-webfont.eot');
-    src: url('./fonts/raleway-medium-webfont.eot?#iefix') format('embedded-opentype'),
-    url('./fonts/raleway-medium-webfont.woff2') format('woff2'),
-    url('./fonts/raleway-medium-webfont.woff') format('woff'),
-    url('./fonts/raleway-medium-webfont.ttf') format('truetype'),
-    url('./fonts/raleway-medium-webfont.svg#ralewaymedium') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Glyphicons Halflings';
-    src: url('../font-glyphicon/glyphicons-halflings-regular.eot');
-    src: url('../font-glyphicon/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
-    url('../font-glyphicon/glyphicons-halflings-regular.woff') format('woff'),
-    url('../font-glyphicon/glyphicons-halflings-regular.ttf') format('truetype'),
-    url('../font-glyphicon/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
-}
+/*@font-face {*/
+    /*font-family: 'raleway';*/
+    /*src: url('./fonts/raleway-medium-webfont.eot');*/
+    /*src: url('./fonts/raleway-medium-webfont.eot?#iefix') format('embedded-opentype'),*/
+    /*url('./fonts/raleway-medium-webfont.woff2') format('woff2'),*/
+    /*url('./fonts/raleway-medium-webfont.woff') format('woff'),*/
+    /*url('./fonts/raleway-medium-webfont.ttf') format('truetype'),*/
+    /*url('./fonts/raleway-medium-webfont.svg#ralewaymedium') format('svg');*/
+    /*font-weight: normal;*/
+    /*font-style: normal;*/
+/*}*/
 
 .glyphicon {
     position: relative;
@@ -111,6 +102,8 @@ body {
 
 .Segment textarea {
     resize: none;
+    word-wrap: break-word; !important;
+    word-break:break-all; !important;
 }
 
 .LongText {
@@ -142,6 +135,7 @@ body {
     padding-top: 60px;
     z-index: 5;
 }
+
 
 #blank {
     height: 200px;

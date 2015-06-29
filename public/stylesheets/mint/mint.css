@@ -165,6 +165,7 @@ h1,h2,h3,h4,h5 {
 	content: "\e000";
 }
 
+
 .MintIconStart:before {
 	content: "\e001";
 }
@@ -175,6 +176,12 @@ h1,h2,h3,h4,h5 {
 
 .MintIconContact:before {
 	content: "\e003";
+}
+
+.icon-text {
+    font-weight: 600;
+    font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-transform: none;
 }
 
 .bl-main > section .CloseButton {
@@ -541,3 +548,4 @@ section.bl-expand .CloseButton {
 #turnToRegister {
 	cursor: pointer;
 }
+
