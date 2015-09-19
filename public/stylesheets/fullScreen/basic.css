@@ -1,0 +1,321 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  font-family: 'Cuprum', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', 'Microsoft Yahei', sans-serif;
+  color: #FFF:
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#scrollContainer, section {
+  height: 100%;
+  position: relative;
+}
+
+div.holder {
+  color: #FFF;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+
+#sec0 {
+  background-image: url("http://7xjgb0.com1.z0.glb.clouddn.com/aya.jpg");
+}
+
+#main-text {
+  position: absolute;
+  top: 40%;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
+  border: 3px solid #FFF;
+  transition: 0.5s;
+}
+
+#main-text:hover {
+  transform: scale(1.2, 1.2);
+}
+
+#main-text span {
+  font-size: 4rem;
+}
+
+#gitLink {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  text-align: center;
+}
+
+#gitLink a{
+  margin-top: 15%;
+  color: #FFF;
+  font-size: 1.5rem;
+}
+
+#sec1 {
+  background-image: url("http://7xjgb0.com1.z0.glb.clouddn.com/TinyPicaa.jpg");
+}
+
+#sec2 {
+  background-color: #CCC;
+}
+
+#mintHeader {
+  background-color: #0685AB;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  opacity: 0.9;
+  z-index: 1000;
+}
+
+#logo {
+  float: left;
+  margin-left: 10%;
+  font-size: 3em;
+  color: #FFF;
+}
+
+#logo a {
+  cursor: pointer;
+  font-family: 'Lobster', 'Cuprum', 'WenQuanYi Micro Hei';
+}
+
+#menu {
+  position: absolute;
+  right: 10%;
+  font-size: 2em;
+  height: 70px;
+}
+
+#menuContainer {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+#menuContainer ul {
+  height: 100%;
+}
+
+#menuContainer a {
+  cursor: pointer;
+  z-index: 10;
+}
+
+#menuContainer:hover #line {
+  opacity: 1;
+  margin-left: 4%;
+  margin-right: 4%;
+  width: 92%;
+}
+
+#line {
+  position: absolute;
+  /*margin-left: 4%;*/
+  margin-left: 50%;
+  margin-right: 50%%;
+  bottom: 10%;
+  height: 10%;
+  width: 0;
+  border-bottom: 2px solid #FFF;
+  transition: 0.3s ease-out;
+  opacity:0;
+}
+
+
+#menu li {
+  height: 100%;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+a.nothing {
+  cursor: auto;
+  color: #FFF;
+}
+
+#menu a {
+  top: 5%;
+  bottom: 5%;
+  color: #FFF;
+}
+
+#menu-small {
+  position: absolute;
+  width: 100%;
+  top: 70px;
+  z-index: 100;
+}
+
+#menu-small-logo {
+  text-align: center;
+  font-size: 2em;
+  color: #FFF;
+  transition: 0.5s;
+}
+
+#small-section {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  transition: 1s;
+  z-index: 50;
+  opacity: 0;
+  display: none;
+}
+
+#small-section ul {
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 70px;
+  text-align: center;
+}
+
+#small-section li{
+  float: left;
+  line-height: 70px;
+  width: 50%;
+}
+
+#small-section a {
+  color: #FFF;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.CenterRec {
+  position: absolute;
+  top: -550px;
+  height: 40%;
+  left: 50%;
+  margin-left: -150px;;
+  height: 350px;
+  width: 300px;
+  background-color: #7FB0C2;
+  opacity: 0.85;
+  transition: 0.5s;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.innerRec {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.closeRec {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.closeRec span {
+  font-size: 2em;
+  cursor: pointer;
+  color: #FFF;
+}
+
+h2 span {
+  text-align: center;
+}
+
+div.CenterRec form label span {
+  left:20px;
+  font-size: 1.5em;
+}
+
+#loginButton {
+  height: auto;
+  width: 100%;
+  cursor: pointer;
+}
+
+div.CenterRec form {
+  top: 40%;
+}
+
+div.form-container {
+  position: relative;
+  top: 10%;
+  bottom: 100px;
+  width: 100%;
+  height: 80%;
+}
+
+div.form-container>div {
+  text-align: center;
+}
+
+div.form-container>div a {
+  font-size: 2em;
+  color: #FFF;
+  cursor: default;
+}
+
+#loginButton, #signupButton {
+  position: absolute;
+  color: #FFF;
+  font-size: 3em;
+  text-align: center;
+  left: 50%;
+  margin-left: -70px;
+  width: 140px;
+  height: 45px;
+  cursor: pointer;
+}
+
+#signupSection {
+  height: 550px;
+  overflow: auto;
+}
+
+
+@media screen and (min-width:1200px){
+  .CenterRec {
+    margin-left: -195px;
+    height: 450px;
+    width: 390px;
+  }
+}
+
+@media screen and (max-width:600px){
+  #menu {
+    display: none;
+  }
+  #logo {
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  #small-section {
+    background-color: #3C9DBA;
+    opacity: 0.7;
+    display: block;
+  }
+
+  #small-section:hover {
+    background-color: #EC8614;
+    opacity: 0.9;
+  }
+
+}

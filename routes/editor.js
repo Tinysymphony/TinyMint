@@ -35,7 +35,7 @@ router.get('/', function (req, res, next) {
     });
 });
 
-router.get('/tutorial', function(req, res, next){
+router.get('/tutorial', function (req, res, next){
     var title = req.query.title;
     var tutorialPath = rootPath + "/tutorial/" + title;
     fs.exists(tutorialPath, function(exists){
@@ -87,13 +87,13 @@ router.post('/markdown', function (req, res, next) {
     res.end();
 });
 
-router.post('/save', function(req, res, next){
+router.post('/save', function (req, res, next){
     var data = req.body;
     var userPath = pwd + req.session.user.name + "/";   //username->userfile
     saveAll(userPath, data, res);
 });
 
-router.post('/download', function(req, res, next){
+router.post('/download', function (req, res, next){
     var filename = req.body.title;
     var userPath = pwd + req.session.user.name + "/" + filename;
     var tutorialPath = rootPath + "/tutorial/" + filename;

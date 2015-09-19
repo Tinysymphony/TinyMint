@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="wytiny">
+    <title><%= title %></title>
+    <script type="text/javascript" src="/javascripts/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="/javascripts/fullScreenScroll.js"></script>
+    <link href='https://fonts.lug.ustc.edu.cn/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.lug.ustc.edu.cn/css?family=Cuprum' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.lug.ustc.edu.cn/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/inputA.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/fullScreen/basic.css" />
+    <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <header id="mintHeader">
+      <div id="logo"><a>TinyMint</a></div>
+      <div id="menu">
+        <div id="menuContainer">
+          <ul>
+            <li><a class="login">Login</a></li>
+            <li><a class=".nothing">/</a></li>
+            <li><a class="signup">Sign up</a></li>
+          </ul>
+          <div id="line"></div>
+        </div>
+      </div>
+    </header>
+    <div id="scrollContainer">
+      <section>
+        <div id="sec0" class="holder">
+          <div id="main-text">
+            <div>
+              <span>Work As A Webpage Designer.</span>
+            </div>
+          </div>
+          <div id="gitLink"><a href="https://github.com/Tinysymphony/TinyMint"><i class="fa fa-github"></i> : TinySymphony</a></div>
+        </div>
+      </section>
+      <section>
+        <div id="sec1" class="holder">
+        </div>
+      </section>
+      <section>
+        <div id="sec2" class="holder">
+        </div>
+      </section>
+    </div>
+    <div id="small-section">
+      <ul>
+        <li><a class="login">Login</a></li>
+        <li><a class="signup">Sign up</a></li>
+      </ul>
+    </div>
+    <div id="loginSection" class="CenterRec">
+      <div class="innerRec">
+        <div class="closeRec">
+          <span><i class="fa fa-times"></i></span>
+        </div>
+        <div class="form-container">
+          <div><a id="infoA">Login</a></div>
+          <form action="/" method="post" id="loginForm" >
+            <span class="input input--kaede">
+              <input class="input__field input__field--kaede" type="text" id="username1" name="name"/>
+              <label class="input__label input__label--kaede" for="username1">
+                <span class="input__label-content input__label-content--kaede">User ID</span>
+              </label>
+            </span>
+            <span class="input input--kaede">
+              <input class="input__field input__field--kaede" type="password" id="password1" name="password"/>
+              <label class="input__label input__label--kaede" for="password1">
+                <span class="input__label-content input__label-content--kaede">Password</span>
+              </label>
+            </span>
+            <div id="loginButton"><span><i class="fa fa-check"></i></span></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="signupSection" class="CenterRec">
+      <div class="innerRec">
+        <div class="closeRec">
+          <span><i class="fa fa-times"></i></span>
+        </div>
+        <div class="form-container">
+          <div><a id="infoB">Sign up</a></div>
+          <form action="/" method="post" id="signupForm">
+            <span class="input input--kaede">
+              <input class="input__field input__field--kaede" type="text" id="username2" name="name"/>
+              <label class="input__label input__label--kaede" for="username2">
+                <span class="input__label-content input__label-content--kaede">User Name</span>
+              </label>
+            </span>
+            <span class="input input--kaede">
+              <input class="input__field input__field--kaede" type="text" id="email" name="mail"/>
+              <label class="input__label input__label--kaede" for="email">
+                <span class="input__label-content input__label-content--kaede">Email</span>
+              </label>
+            </span>
+            <span class="input input--kaede">
+              <input class="input__field input__field--kaede" type="password" id="password2" name="password"/>
+              <label class="input__label input__label--kaede" for="password2">
+                <span class="input__label-content input__label-content--kaede">Password</span>
+              </label>
+            </span>
+            <span class="input input--kaede">
+              <input  class="input__field input__field--kaede" type="password" id="password3" name="repassword"/>
+              <label class="input__label input__label--kaede" for="password3">
+                <span class="input__label-content input__label-content--kaede">Re-enter Password</span>
+              </label>
+            </span>
+            <div id="signupButton"><span><i class="fa fa-check"></i></span></div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="/javascripts/fullScreen/basic.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(function() {
+        $("#scrollContainer").fullScreenScroll({
+          'loop': false
+        });
+      });
+    </script>
+  </body>
+</html>

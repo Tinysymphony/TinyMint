@@ -2,7 +2,7 @@
 
 -----
 
-> WyTiny Begins at 24/05/2015 
+> WyTiny Begins at 24/05/2015
 
 -----
 
@@ -15,6 +15,8 @@ It's inspired by MS Sway and the initial UI of TinyMint is similar to Sway, yet 
 
 -----
 
-##### 6.6 Dashboard Frontend version 1
+##### 9.20 Update TinyMint Index UI
 
 ##### 6.25 Editor Board version 1.0
+
+##### 6.6 Dashboard Frontend version 1

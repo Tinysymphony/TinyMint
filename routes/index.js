@@ -11,7 +11,7 @@ var pwd = pwdSlice.join('/') + "/UserSpace/"
 
 router.get('/', checkLogin);
 router.get('/', function (req, res, next) {
-    res.render('index', {
+    res.render('fullScreen', {
         title: 'TinyMint | Web Designer',
         user: req.session.user
     });
@@ -20,11 +20,12 @@ router.get('/', function (req, res, next) {
 router.post('/', function (req, res, next) {
 
     var data = req.body;
-
+    console.log(data);
     //login section
     if (data.login) {
-        if (!data.username)
+        if (!data.username){
             res.json({"info": "Please input username"});
+        }
         else if (!data.password)
             res.json({"info": "Please input password"});
         else {
@@ -45,7 +46,7 @@ router.post('/', function (req, res, next) {
         console.log(data.username);
         if (!data.username) {
             res.json({"info": "Please create a user name"});
-        }else if((data.username).length<3){
+        } else if((data.username).length<3){
             res.json({"info": "Username is at least 3 characters"});
         } else if (!data.email) {
             res.json({"info": "Please input email address"});
@@ -53,7 +54,7 @@ router.post('/', function (req, res, next) {
             res.json({"info": "Please create a password"});
         } else if((data.password).length<6){
             res.json({"info": "Password is at least 6 characters"});
-        }else if (data.password != data.repassword) {
+        } else if (data.password != data.repassword) {
             res.json({"info": "The passwords aren't same"});
         } else {
             User.getByName(data.username, function (err, user) {
@@ -69,7 +70,7 @@ router.post('/', function (req, res, next) {
                         mail: data.email
                     });
                     createUser.save(function (err) {
-                        if (err) {
+                        if(err) {
                             res.json({"info": err});
                         }
                         fs.mkdir(pwd + createUser.name, function(err){
@@ -81,7 +82,7 @@ router.post('/', function (req, res, next) {
                             console.log("New user " + createUser.name + " joined");
                             res.json({"info": "Sign up success", "link": "/dashboard"});
                         });
-                    })
+                    });
                 }
             });
         }
