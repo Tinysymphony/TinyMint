@@ -52,7 +52,7 @@
       }
 
       if(settings.dots){
-
+        bindDotsClick();
       }
 
       if(settings.keyboard){
@@ -88,12 +88,22 @@
     }
     target.addClass("focus").siblings().removeClass("focus");
     if(settings.dots){
-      renderDots();
+      renderDots(index);
     }
   }
 
-  function renderDots(){
-    $(settings.list).eq(sectionIndex).addClass("focus").siblings().removeClass("focus");
+  function renderDots(index){
+    $(settings.list).eq(index).addClass("focus").siblings().removeClass("focus");
+  }
+
+  function bindDotsClick(){
+    $(function(){
+      $(settings.list).each(function(index) {
+        $(this).click(function(){
+          moveToPage(index);
+        });
+      });
+    });
   }
 
   function onKeyDown(){

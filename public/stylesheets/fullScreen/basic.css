@@ -15,6 +15,11 @@ ul {
   list-style-type: none;
 }
 
+a, p, article {
+  word-wrap: break-word;
+  word-break: keep-all;
+}
+
 #scrollContainer, section {
   height: 100%;
   position: relative;
@@ -34,9 +39,9 @@ div.holder {
 #main-text {
   position: absolute;
   top: 40%;
-  width: 60%;
-  margin-left: 20%;
-  margin-right: 20%;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
   text-align: center;
   border: 3px solid #FFF;
   transition: 0.5s;
@@ -47,13 +52,13 @@ div.holder {
 }
 
 #main-text span {
-  font-size: 4rem;
+  font-size: 2.5rem;
 }
 
 #gitLink {
-  position: absolute;
-  bottom: 10%;
+  position: fixed;
   right: 10%;
+  bottom: 10%;
   text-align: center;
 }
 
@@ -61,10 +66,11 @@ div.holder {
   margin-top: 15%;
   color: #FFF;
   font-size: 1.5rem;
+  cursor: pointer;
 }
 
 #sec1 {
-  background-image: url("http://7xjgb0.com1.z0.glb.clouddn.com/TinyPicaa.jpg");
+  background-color: #C1D8D2;
 }
 
 #sec2 {
@@ -90,8 +96,14 @@ div.holder {
 }
 
 #logo a {
+  color: #FFF;
   cursor: pointer;
+  transition: 1s;
   font-family: 'Lobster', 'Cuprum', 'WenQuanYi Micro Hei';
+}
+
+#logo:hover a {
+  color: #FFF426;
 }
 
 #menu {
@@ -288,6 +300,27 @@ div.form-container>div a {
   overflow: auto;
 }
 
+#dots {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+}
+
+#dots li {
+  display: block;
+  position: relative;
+  margin: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 0.5rem;
+  color: #FFF;
+  cursor: pointer;
+}
+
+#dots li.focus {
+  font-size: 1rem;
+  color: #FFF426;
+}
 
 @media screen and (min-width:1200px){
   .CenterRec {
@@ -295,7 +328,161 @@ div.form-container>div a {
     height: 450px;
     width: 390px;
   }
+
+  #main-text span {
+    font-size: 4rem;
+  }
 }
+
+/* the second section */
+
+#introduction {
+  position: relative;
+  width: 100%;
+  height: 45%;
+  /*background-color: #45A5CC;*/
+}
+
+
+#introduction .intro-holder {
+  position: absolute;
+  margin-left: 10%;
+  margin-top: 100px;
+  height: 80%;
+  width: 80%;
+}
+
+#introduction .intro-holder p {
+  font-size: 1.5rem;
+  color: #444;
+}
+
+#introduction h1 {
+  font-size: 2rem;
+  color: #444;
+}
+
+#pics {
+  position: relative;
+  width: 100%;
+  height: 55%;
+  opacity: 1;
+  background-color: #336699;
+}
+
+.pics-inner {
+  float: left;
+  height: inherit;
+  width: inherit;
+}
+
+.icon-container {
+  width: 20%;
+  height: 100%;
+  text-align: center;
+}
+
+div.a-container {
+  position: relative;
+  top: 50%;
+  margin-top: -1.5em;
+}
+
+div.icon-container a{
+  font-size: 3em;
+  color: #000;
+  transition: 0.5s;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+div.icon-container a:hover {
+  opacity: 1;
+}
+
+div.pics-container {
+  width: 60%;
+  height: 100%;
+  padding: 10%, 10%;
+
+}
+
+#pics-scroll {
+  top: 50%;
+}
+
+#pics-scroll .item {
+  margin: 5px;
+}
+
+#pics-scroll img{
+  display: block;
+  width: 100%;
+  height: auto;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* third section for about me */
+
+#aboutme {
+  width: 100%;
+  height: 70%;
+}
+
+#contact div.content {
+  margin-left: 10%;
+  width: 80%;
+}
+
+#contact {
+  width: 100%;
+  height: 30%;
+  padding-top: 30px;
+  background-color: #333;
+  text-align: center;
+}
+
+#links h4{
+  height: 3em;
+  line-height: 3em;
+}
+
+#links a {
+  display: inline-block;
+  font-size: 3em;
+  color: #DDD;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#contact p {
+  margin-top: 20px;
+  clear: both;
+}
+
+#links {
+  text-align: center;
+}
+
+#tiny {
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  height: 100%;
+  padding-top: 150px;
+  color: #444;
+}
+
+#tiny h2{
+  font-size: 4em;
+}
+
+#tiny p {
+  font-size: 2.5em;
+}
+
 
 @media screen and (max-width:600px){
   #menu {
@@ -318,4 +505,33 @@ div.form-container>div a {
     opacity: 0.9;
   }
 
+  #gitLink {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 20%;
+    text-align: center;
+    /*margin-top: 40%;*/
+  }
+
+  #introduction {
+    height: 100%;
+  }
+
+  #pics {
+    height: 0%;
+    opacity: 0;
+  }
+
+}
+
+@media screen and (max-height: 700px) {
+  #introduction {
+    height: 100%;
+  }
+
+  #pics {
+    height: 0%;
+    opacity: 0;
+  }
 }

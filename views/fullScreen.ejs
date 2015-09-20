@@ -7,6 +7,9 @@
     <title><%= title %></title>
     <script type="text/javascript" src="/javascripts/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="/javascripts/fullScreenScroll.js"></script>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/owl-carousel/1.32/owl.carousel.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/owl-carousel/1.32/owl.theme.min.css" media="screen" title="no title" charset="utf-8">
+    <script type="text/javascript" src="http://cdn.bootcss.com/owl-carousel/1.32/owl.carousel.min.js"></script>
     <link href='https://fonts.lug.ustc.edu.cn/css?family=Lobster' rel='stylesheet' type='text/css'>
     <link href='https://fonts.lug.ustc.edu.cn/css?family=Cuprum' rel='stylesheet' type='text/css'>
     <link href='https://fonts.lug.ustc.edu.cn/css?family=Lato' rel='stylesheet' type='text/css'>
@@ -16,12 +19,12 @@
   </head>
   <body>
     <header id="mintHeader">
-      <div id="logo"><a>TinyMint</a></div>
+      <div id="logo"><a href="http://www.wytiny.com">TinyMint</a></div>
       <div id="menu">
         <div id="menuContainer">
           <ul>
             <li><a class="login">Login</a></li>
-            <li><a class=".nothing">/</a></li>
+            <li><a class="nothing">/</a></li>
             <li><a class="signup">Sign up</a></li>
           </ul>
           <div id="line"></div>
@@ -33,7 +36,7 @@
         <div id="sec0" class="holder">
           <div id="main-text">
             <div>
-              <span>Work As A Webpage Designer.</span>
+              <span>Work As A Web Designer.</span>
             </div>
           </div>
           <div id="gitLink"><a href="https://github.com/Tinysymphony/TinyMint"><i class="fa fa-github"></i> : TinySymphony</a></div>
@@ -41,10 +44,74 @@
       </section>
       <section>
         <div id="sec1" class="holder">
+          <div id="introduction">
+            <div class="intro-holder">
+              <h1>TinyMint -- An Online Webpage Editor</h1>
+              <p>
+                TinyMint is an online webpage builder.
+              </p>
+              <p>
+                Using the provided templates and graphical Interfaces, users can easily design a webpage with custom pictures, articles and multimedias.
+              </p>
+              <p>
+                It's initially inspired by MS Sway, in later versions TinyMint would be equiped with more creative auxiliary functions and tools to bring a brilliant experience to users.
+              </p>
+            </div>
+          </div>
+          <div id="pics">
+            <div class="icon-container pics-inner">
+              <div class="a-container">
+                <a class="fa fa-angle-left prev"><a>
+              </div>
+            </div>
+            <div class="pics-container pics-inner">
+              <div id="pics-scroll" class="owl-carousel owl-theme">
+                <div class="item">
+                  <img src="http://7xjgb0.com1.z0.glb.clouddn.com/Selection_015.png" alt="" />
+                </div>
+                <div class="item">
+                  <img src="http://7xjgb0.com1.z0.glb.clouddn.com/Selection_015.png" alt="" />
+                </div>
+                <div class="item">
+                  <img src="http://7xjgb0.com1.z0.glb.clouddn.com/Selection_015.png" alt="" />
+                </div>
+                <div class="item">
+                  <img src="http://7xjgb0.com1.z0.glb.clouddn.com/Selection_015.png" alt="" />
+                </div>
+              </div>
+              </table>
+            </div>
+            <div class="icon-container pics-inner">
+              <div class="a-container">
+                <a class="fa fa-angle-right next"></a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <section>
         <div id="sec2" class="holder">
+          <div id="aboutme">
+            <div id="tiny">
+              <h2>About me -- WyTiny</h2>
+              <p>
+                A CS student of Zhejiang Univercity, HangZhou, China.
+              </p>
+            </div>
+          </div>
+          <div id="contact">
+            <div id="links">
+              <h5>
+                <a href="https://github.com/Tinysymphony" class="fa fa-github" title="github"></a>
+                <a href="https://twitter.com/zjutiny" class="fa fa-twitter" title="twitter"></a>
+                <a href="http://weibo.com/p/1005053164958577/home?from=page_100505&mod=TAB#place" class="fa fa-weibo" title="weibo"></a>
+                <a href="http://www.wytiny.me" class="fa fa-rss" title="my blog"></a>
+              </h5>
+            </div>
+            <p>
+              Copyright (c) 2014 Copyright Holder All Rights Reserved. | WyTiny
+            </p>
+          </div>
         </div>
       </section>
     </div>
@@ -117,12 +184,43 @@
         </div>
       </div>
     </div>
+    <div id="dots">
+      <ul>
+        <li class="focus"><span><i class="fa fa-circle"></i></span></li>
+        <li><span><i class="fa fa-circle"></i></span></li>
+        <li><span><i class="fa fa-circle"></i></span></li>
+      </ul>
+    </div>
     <script src="/javascripts/fullScreen/basic.js" charset="utf-8"></script>
     <script type="text/javascript">
       $(function() {
+        //use fullScreenScroll plugin
         $("#scrollContainer").fullScreenScroll({
           'loop': false
         });
+
+        //use owlCarousel plugin
+        var owl = $("#pics-scroll");
+        owl.owlCarousel({
+          items: 3,
+          autoPlay: 2500,
+          itemsDesktop : [1199,3],
+          itemsDesktopSmall : [979,3]
+        });
+        $(".next").click(function(){
+          owl.trigger('owl.next');
+        });
+        $(".prev").click(function(){
+          owl.trigger('owl.prev');
+        });
+
+        //vertical-align amiddle for dots list & pics-scroll
+        document.getElementById("dots").style.marginTop = "-" + (document.getElementById("dots").offsetHeight / 2) + "px";
+        document.getElementById("pics-scroll").style.marginTop = "-" + document.getElementById("pics-scroll").offsetHeight / 2 + "px";
+      });
+
+      $(window).resize(function() {
+        document.getElementById("pics-scroll").style.marginTop = "-" + document.getElementById("pics-scroll").offsetHeight / 2 + "px";
       });
     </script>
   </body>
