@@ -67,19 +67,24 @@
             <div class="pics-container pics-inner">
               <div id="pics-scroll" class="owl-carousel owl-theme">
                 <div class="item">
-                  <img src="http://7xjgb0.com1.z0.glb.clouddn.com/Selection_015.png" alt="" />
+                  <img src="http://7xjgb0.com1.z0.glb.clouddn.com/MintPicSelection_054.png" alt="" />
                 </div>
                 <div class="item">
-                  <img src="http://7xjgb0.com1.z0.glb.clouddn.com/Selection_015.png" alt="" />
+                  <img src="http://7xjgb0.com1.z0.glb.clouddn.com/MintPicSelection_050.png" alt="" />
                 </div>
                 <div class="item">
-                  <img src="http://7xjgb0.com1.z0.glb.clouddn.com/Selection_015.png" alt="" />
+                  <img src="http://7xjgb0.com1.z0.glb.clouddn.com/MintPicSelection_052.png" alt="" />
                 </div>
                 <div class="item">
-                  <img src="http://7xjgb0.com1.z0.glb.clouddn.com/Selection_015.png" alt="" />
+                  <img src="http://7xjgb0.com1.z0.glb.clouddn.com/MintPicSelection_053.png" alt="" />
+                </div>
+                <div class="item">
+                  <img src="http://7xjgb0.com1.z0.glb.clouddn.com/MintPicSelection_048.png" alt="" />
+                </div>
+                <div class="item">
+                  <img src="http://7xjgb0.com1.z0.glb.clouddn.com/MintPicSelection_049.png" alt="" />
                 </div>
               </div>
-              </table>
             </div>
             <div class="icon-container pics-inner">
               <div class="a-container">
@@ -202,10 +207,10 @@
         //use owlCarousel plugin
         var owl = $("#pics-scroll");
         owl.owlCarousel({
-          items: 3,
-          autoPlay: 2500,
-          itemsDesktop : [1199,3],
-          itemsDesktopSmall : [979,3]
+          autoPlay: 3000,
+          singleItem:true
+          // itemsDesktop : [1199,3],
+          // itemsDesktopSmall : [979,1]
         });
         $(".next").click(function(){
           owl.trigger('owl.next');
@@ -216,11 +221,6 @@
 
         //vertical-align amiddle for dots list & pics-scroll
         document.getElementById("dots").style.marginTop = "-" + (document.getElementById("dots").offsetHeight / 2) + "px";
-        document.getElementById("pics-scroll").style.marginTop = "-" + document.getElementById("pics-scroll").offsetHeight / 2 + "px";
-      });
-
-      $(window).resize(function() {
-        document.getElementById("pics-scroll").style.marginTop = "-" + document.getElementById("pics-scroll").offsetHeight / 2 + "px";
       });
     </script>
   </body>

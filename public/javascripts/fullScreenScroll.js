@@ -153,6 +153,61 @@
     return false;
   }
 
+  var Touch = {
+    baseX: 0,
+    baseY: 0,
+    destX: 0,
+    destY: 0,
+    start: function (e) {
+      // e.preventDefault();
+      var point = e.targetTouches[0];
+      this.baseX = point.pageX;
+      this.baseY = point.pageY;
+    },
+    move: function (e) {
+      // e.preventDefault();
+      var point = e.targetTouches[0];
+      this.destX = point.pageX;
+      this.destY = point.pageY;
+    },
+    end: function (e) {
+      // e.preventDefault();
+      if(settings.direction == "horizontal"){
+        if(this.destX > this.baseX){
+          FSS.moveUp();
+        } else if(this.destX < this.baseX){
+          FSS.moveDown();
+        }
+      } else {
+        if(this.destY > this.baseY){
+          FSS.moveUp();
+        } else if(this.destY < this.baseY) {
+          FSS.moveDown();
+        }
+      }
+    }
+  };
+
+  function reSize(){
+    var height = $(window).height();
+    var width = $(window).width();
+
+  }
+
+  //bind mousewheel event on document
   $(document).on("mousewheel DOMMouseScroll", mouseWheelHandler);
+  //touch
+  document.addEventListener('touchstart', Touch.start);
+  document.addEventListener('touchmove', Touch.move);
+  document.addEventListener('touchend', Touch.end);
+  //resize
+  var reSizeID;
+  $(window).resize(function(){
+    clearTimeout(reSizeID);
+    reSizeID = setTimeout(function(){
+      moveToPage(sectionIndex);
+    }, 100);
+  });
+
 
 })(jQuery, window, document);

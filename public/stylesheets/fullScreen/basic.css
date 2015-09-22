@@ -377,12 +377,12 @@ div.form-container>div a {
 }
 
 .icon-container {
-  width: 20%;
+  width: 30%;
   height: 100%;
   text-align: center;
 }
 
-div.a-container {
+.a-container {
   position: relative;
   top: 50%;
   margin-top: -1.5em;
@@ -390,7 +390,7 @@ div.a-container {
 
 div.icon-container a{
   font-size: 3em;
-  color: #000;
+  color: #CCC;
   transition: 0.5s;
   opacity: 0.8;
   cursor: pointer;
@@ -398,30 +398,36 @@ div.icon-container a{
 
 div.icon-container a:hover {
   opacity: 1;
+  color: #FFF;
 }
 
 div.pics-container {
-  width: 60%;
+  position: relative;
+  width: 40%;
   height: 100%;
   padding: 10%, 10%;
-
 }
 
 #pics-scroll {
+  position: absolute;
   top: 50%;
-}
-
-#pics-scroll .item {
-  margin: 5px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #pics-scroll img{
   display: block;
   width: 100%;
   height: auto;
+  transition: 0.5s;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+#pics-scroll img:hover {
+  opacity: 0.6;
 }
 
 /* third section for about me */
@@ -452,14 +458,20 @@ div.pics-container {
 #links a {
   display: inline-block;
   font-size: 3em;
-  color: #DDD;
+  color: #CCC;
   margin-left: 20px;
   margin-right: 20px;
+  transition: 0.5s;
+}
+
+#links a:hover {
+  color: #FCF353;
 }
 
 #contact p {
   margin-top: 20px;
   clear: both;
+  color: #CCC;
 }
 
 #links {
